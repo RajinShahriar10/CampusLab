@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Report Fault</title>
+</head>
+<body>
+	<div class="container">
+		<div class="sidebar">
+			<h1>CampusLab</h1>
+			<p>Student</p>
+			<ul>
+				<li><a href="dashboard.html">Dashboard</a></li>
+				<li><a href="equipment-catalogue.html">Book Equipment</a></li>
+				<li><a href="my-reservations.html">My Reservations</a></li>
+				<li><a href="report-fault.html">Report Fault</a></li>
+				<li><a href="../common/profile.html">Profile</a></li>
+			</ul>
+		</div>
+		<div class="main-content">
+			<h2>Report Equipment Fault</h2>
+			<form action="#" method="post" enctype="multipart/form-data">
+				<fieldset>
+					<legend>Fault Report</legend>
+					<label for="reservation-id">Reservation:</label>
+					<select id="reservation-id" name="reservation_id" required>
+						<option value="">Select a past reservation</option>
+						<option value="98">Digital Logic Trainer Kit - 20-10-2026 09:00-10:00</option>
+						<option value="96">8086 Microprocessor Trainer Kit - 18-10-2026 11:00-12:00</option>
+					</select>
+					<br />
+					<label for="fault-type">Fault Type:</label>
+					<select id="fault-type" name="fault_type" required>
+						<option value="">Select fault type</option>
+						<option value="not_powering_on">Not powering on</option>
+						<option value="reading_problem">Wrong reading / display problem</option>
+						<option value="cable_damage">Probe or cable damaged</option>
+						<option value="calibration_error">Calibration error</option>
+						<option value="physical_damage">Physical damage</option>
+						<option value="other">Other</option>
+					</select>
+					<br />
+					<label>Severity:</label>
+					<br />
+					<input type="radio" id="severity-low" name="severity" value="low" required /> Low
+					<br />
+					<input type="radio" id="severity-medium" name="severity" value="medium" /> Medium
+					<br />
+					<input type="radio" id="severity-high" name="severity" value="high" /> High
+					<br />
+					<label for="description">Description:</label>
+					<br />
+					<textarea id="description" name="description" rows="5" cols="40" minlength="20" maxlength="500" placeholder="Write at least 20 characters" required></textarea>
+					<br />
+					<label for="fault-photo">Fault Photo:</label>
+					<input type="file" id="fault-photo" name="fault_photo" accept="image/*" />
+					<br />
+					<label>Is the equipment still usable:</label>
+					<br />
+					<input type="radio" id="still-usable-yes" name="still_usable" value="yes" required /> Yes
+					<br />
+					<input type="radio" id="still-usable-no" name="still_usable" value="no" /> No
+					<br />
+					<br />
+					<input type="submit" value="Submit Report" />
+					<input type="reset" />
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

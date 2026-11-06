@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>My Reservations</title>
+</head>
+<body>
+	<div class="container">
+		<div class="sidebar">
+			<h1>CampusLab</h1>
+			<p>Student</p>
+			<ul>
+				<li><a href="dashboard.html">Dashboard</a></li>
+				<li><a href="equipment-catalogue.html">Book Equipment</a></li>
+				<li><a href="my-reservations.html">My Reservations</a></li>
+				<li><a href="report-fault.html">Report Fault</a></li>
+				<li><a href="../common/profile.html">Profile</a></li>
+			</ul>
+		</div>
+		<div class="main-content">
+			<h2>My Reservations</h2>
+			<h3>Upcoming Reservations</h3>
+			<table>
+				<tr>
+					<th>Equipment</th>
+					<th>Lab</th>
+					<th>Date / Time</th>
+					<th>Status</th>
+					<th>Actions</th>
+				</tr>
+				<tr>
+					<td>Oscilloscope</td>
+					<td>Electronic Device Lab</td>
+					<td>10-11-2026 10:00-12:20</td>
+					<td>Approved</td>
+					<td>
+						<a href="#qr-code">View QR</a>
+						<form action="#" method="post">
+							<fieldset>
+								<legend>Reschedule</legend>
+								<input type="hidden" name="reservation_id" value="101" />
+								<label for="new-date-101">New Date:</label>
+								<input type="date" id="new-date-101" name="new_date" required />
+								<br />
+								<label for="new-start-time-101">New Start Time:</label>
+								<input type="time" id="new-start-time-101" name="new_start_time" required />
+								<br />
+								<label for="new-end-time-101">New End Time:</label>
+								<input type="time" id="new-end-time-101" name="new_end_time" required />
+								<br />
+								<label for="reason-101">Reason:</label>
+								<input type="text" id="reason-101" name="reason" maxlength="150" />
+								<br />
+								<button type="submit">Reschedule</button>
+							</fieldset>
+						</form>
+						<form action="#" method="post">
+							<fieldset>
+								<legend>Cancel</legend>
+								<input type="hidden" name="reservation_id" value="101" />
+								<label for="cancel-reason-101">Reason:</label>
+								<select id="cancel-reason-101" name="cancel_reason" required>
+									<option value="">Select a reason</option>
+									<option value="change_of_plan">Change of plan</option>
+									<option value="schedule_conflict">Schedule conflict</option>
+									<option value="no_longer_needed">No longer needed</option>
+									<option value="other">Other</option>
+								</select>
+								<br />
+								<input type="checkbox" id="confirm-cancel-101" name="confirm_cancel" required /> Yes, cancel this reservation
+								<br />
+								<button type="submit">Cancel Reservation</button>
+							</fieldset>
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<td>Digital Multimeter</td>
+					<td>IEC Lab</td>
+					<td>8-11-2026 15:00-17:20</td>
+					<td>Pending</td>
+					<td>
+						<form action="#" method="post">
+							<fieldset>
+								<legend>Reschedule</legend>
+								<input type="hidden" name="reservation_id" value="102" />
+								<label for="new-date-102">New Date:</label>
+								<input type="date" id="new-date-102" name="new_date" required />
+								<br />
+								<label for="new-start-time-102">New Start Time:</label>
+								<input type="time" id="new-start-time-102" name="new_start_time" required />
+								<br />
+								<label for="new-end-time-102">New End Time:</label>
+								<input type="time" id="new-end-time-102" name="new_end_time" required />
+								<br />
+								<label for="reason-102">Reason:</label>
+								<input type="text" id="reason-102" name="reason" maxlength="150" />
+								<br />
+								<button type="submit">Reschedule</button>
+							</fieldset>
+						</form>
+						<form action="#" method="post">
+							<fieldset>
+								<legend>Cancel</legend>
+								<input type="hidden" name="reservation_id" value="102" />
+								<label for="cancel-reason-102">Reason:</label>
+								<select id="cancel-reason-102" name="cancel_reason" required>
+									<option value="">Select a reason</option>
+									<option value="change_of_plan">Change of plan</option>
+									<option value="schedule_conflict">Schedule conflict</option>
+									<option value="no_longer_needed">No longer needed</option>
+									<option value="other">Other</option>
+								</select>
+								<br />
+								<input type="checkbox" id="confirm-cancel-102" name="confirm_cancel" required /> Yes, cancel this reservation
+								<br />
+								<button type="submit">Cancel Reservation</button>
+							</fieldset>
+						</form>
+					</td>
+				</tr>
+			</table>
+			<br />
+			<h3>Past Reservations</h3>
+			<table>
+				<tr>
+					<th>Equipment</th>
+					<th>Lab</th>
+					<th>Date / Time</th>
+					<th>Status</th>
+					<th>Actions</th>
+				</tr>
+				<tr>
+					<td>Digital Logic Trainer Kit</td>
+					<td>Digital Logic Circuit Lab</td>
+					<td>20-10-2026 09:00-10:00</td>
+					<td>Completed</td>
+					<td>
+						<a href="report-fault.html">Report Fault</a>
+						<a href="session-feedback.html">Rate Session</a>
+						<form action="#" method="post">
+							<input type="hidden" name="reservation_id" value="98" />
+							<button type="submit">Download Receipt</button>
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<td>8086 Microprocessor Trainer Kit</td>
+					<td>Microprocessor Lab</td>
+					<td>18-10-2026 11:00-12:00</td>
+					<td>Completed</td>
+					<td>
+						<a href="report-fault.html">Report Fault</a>
+						<a href="session-feedback.html">Rate Session</a>
+						<form action="#" method="post">
+							<input type="hidden" name="reservation_id" value="96" />
+							<button type="submit">Download Receipt</button>
+						</form>
+					</td>
+				</tr>
+			</table>
+			<br />
+			<h3 id="qr-code">Check-in QR Code</h3>
+			<img src="../assets/images/dummy qr.jpeg" alt="Check-in QR code" width="120" height="120" />
+			<p>Show this QR code to the Lab Technician.</p>
+		</div>
+	</div>
+</body>
+</html>

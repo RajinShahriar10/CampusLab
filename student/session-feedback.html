@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Session Feedback</title>
+</head>
+<body>
+	<div class="container">
+		<div class="sidebar">
+			<h1>CampusLab</h1>
+			<p>Student</p>
+			<ul>
+				<li><a href="dashboard.html">Dashboard</a></li>
+				<li><a href="equipment-catalogue.html">Book Equipment</a></li>
+				<li><a href="my-reservations.html">My Reservations</a></li>
+				<li><a href="report-fault.html">Report Fault</a></li>
+				<li><a href="../common/profile.html">Profile</a></li>
+			</ul>
+		</div>
+		<div class="main-content">
+			<h2>Session Feedback</h2>
+			<form action="#" method="post">
+				<fieldset>
+					<legend>Feedback</legend>
+					<label for="reservation-id">Completed Reservation:</label>
+					<select id="reservation-id" name="reservation_id" required>
+						<option value="">Select a reservation</option>
+						<option value="98">Digital Logic Trainer Kit - 20-10-2026 09:00-10:00</option>
+						<option value="96">8086 Microprocessor Trainer Kit - 18-10-2026 11:00-12:00</option>
+					</select>
+					<br />
+					<label>Rating (1 = poor, 5 = excellent):</label>
+					<br />
+					<input type="radio" id="rating-1" name="rating" value="1" required /> 1
+					<br />
+					<input type="radio" id="rating-2" name="rating" value="2" /> 2
+					<br />
+					<input type="radio" id="rating-3" name="rating" value="3" /> 3
+					<br />
+					<input type="radio" id="rating-4" name="rating" value="4" /> 4
+					<br />
+					<input type="radio" id="rating-5" name="rating" value="5" /> 5
+					<br />
+					<label for="equipment-condition">Equipment Condition:</label>
+					<select id="equipment-condition" name="equipment_condition" required>
+						<option value="">Select condition</option>
+						<option value="excellent">Excellent</option>
+						<option value="good">Good</option>
+						<option value="fair">Fair</option>
+						<option value="poor">Poor</option>
+					</select>
+					<br />
+					<label>Was the technician helpful:</label>
+					<br />
+					<input type="radio" id="technician-helpful-yes" name="technician_helpful" value="yes" required /> Yes
+					<br />
+					<input type="radio" id="technician-helpful-no" name="technician_helpful" value="no" /> No
+					<br />
+					<label for="comments">Comments:</label>
+					<br />
+					<textarea id="comments" name="comments" rows="4" cols="40" maxlength="500"></textarea>
+					<br />
+					<input type="submit" value="Submit Feedback" />
+					<input type="reset" />
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

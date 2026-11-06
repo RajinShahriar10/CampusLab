@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Equipment Catalogue</title>
+</head>
+<body>
+	<div class="container">
+		<div class="sidebar">
+			<h1>CampusLab</h1>
+			<p>Student</p>
+			<ul>
+				<li><a href="dashboard.html">Dashboard</a></li>
+				<li><a href="equipment-catalogue.html">Book Equipment</a></li>
+				<li><a href="my-reservations.html">My Reservations</a></li>
+				<li><a href="report-fault.html">Report Fault</a></li>
+				<li><a href="../common/profile.html">Profile</a></li>
+			</ul>
+		</div>
+		<div class="main-content">
+			<h2>Equipment Catalogue and Booking</h2>
+			<form action="#" method="get">
+				<fieldset>
+					<legend>Filter and Search</legend>
+					<label for="lab-id">Lab:</label>
+					<select id="lab-id" name="lab_id">
+						<option value="">All labs</option>
+						<option value="1">IEC (Introduction to Electrical Circuits) Lab</option>
+						<option value="2">Electronic Device Lab</option>
+						<option value="3">Digital Logic and Circuits Lab</option>
+						<option value="4">Microprocessor Lab</option>
+					</select>
+					<br />
+					<label for="category">Category:</label>
+					<select id="category" name="category">
+						<option value="">All categories</option>
+						<option value="measuring_instrument">Measuring Instrument</option>
+						<option value="power_supply">Power Supply</option>
+						<option value="signal_generator">Signal Generator</option>
+						<option value="trainer_kit">Trainer Kit</option>
+						<option value="microcontroller_board">Microcontroller Board</option>
+					</select>
+					<br />
+					<label for="search">Search:</label>
+					<input type="text" id="search" name="search" placeholder="e.g. Oscilloscope, Multimeter" />
+					<br />
+					<input type="submit" value="Search" />
+				</fieldset>
+			</form>
+			<br />
+			<h3>Equipment List</h3>
+			<img src="../assets/images/Digital Multimeter.jpeg" alt="Digital Multimeter" width="80" height="80" />
+			<h4>Digital Multimeter</h4>
+			<p>IEC Lab | Measuring Instrument</p>
+			<p>Status: Available</p>
+			<a href="#booking-request">Book</a>
+			<hr />
+			<img src="../assets/images/DC Power Supply.jpeg" alt="DC Power Supply" width="80" height="80" />
+			<h4>DC Power Supply</h4>
+			<p>IEC Lab | Power Supply</p>
+			<p>Status: Available</p>
+			<a href="#booking-request">Book</a>
+			<hr />
+			<img src="../assets/images/oscilloscope.jpeg" alt="Oscilloscope" width="80" height="80" />
+			<h4>Oscilloscope</h4>
+			<p>Electronic Device Lab | Measuring Instrument</p>
+			<p>Status: Available</p>
+			<a href="#booking-request">Book</a>
+			<hr />
+			<img src="../assets/images/Function Generator.jpeg" alt="Function Generator" width="80" height="80" />
+			<h4>Function Generator</h4>
+			<p>Electronic Device Lab | Signal Generator</p>
+			<p>Status: Booked</p>
+			<form action="#" method="post">
+				<fieldset>
+					<legend>Join Waitlist</legend>
+						<input type="hidden" name="equipment_id" value="15" />
+					<label for="preferred-date-15">Preferred Date:</label>
+					<input type="date" id="preferred-date-15" name="preferred_date" required />
+					<br />
+					<label for="waitlist-start-15">Start Time:</label>
+					<input type="time" id="waitlist-start-15" name="start_time" required />
+					<br />
+					<label for="waitlist-end-15">End Time:</label>
+					<input type="time" id="waitlist-end-15" name="end_time" required />
+					<br />
+					<button type="submit">Join Waitlist</button>
+				</fieldset>
+			</form>
+			<hr />
+			<img src="../assets/images/Digital Logic Trainer Kit.jpeg" alt="Digital Logic Trainer Kit" width="80" height="80" />
+			<h4>Digital Logic Trainer Kit</h4>
+			<p>Digital Logic and Circuits Lab | Trainer Kit</p>
+			<p>Status: Available</p>
+			<a href="#booking-request">Book</a>
+			<hr />
+			<img src="../assets/images/8086 Microprocessor Trainer Kit.jpeg" alt="8086 Microprocessor Trainer Kit" width="80" height="80" />
+			<h4>8086 Microprocessor Trainer Kit</h4>
+			<p>Microprocessor Lab | Trainer Kit</p>
+			<p>Status: Booked</p>
+			<form action="#" method="post">
+				<fieldset>
+					<legend>Join Waitlist</legend>
+						<input type="hidden" name="equipment_id" value="25" />
+					<label for="preferred-date-25">Preferred Date:</label>
+					<input type="date" id="preferred-date-25" name="preferred_date" required />
+					<br />
+					<label for="waitlist-start-25">Start Time:</label>
+					<input type="time" id="waitlist-start-25" name="start_time" required />
+					<br />
+					<label for="waitlist-end-25">End Time:</label>
+					<input type="time" id="waitlist-end-25" name="end_time" required />
+					<br />
+					<button type="submit">Join Waitlist</button>
+				</fieldset>
+			</form>
+			<hr />
+			<h3 id="booking-request">Booking Request</h3>
+			<form action="#" method="post">
+				<fieldset>
+					<legend>Booking Request Form</legend>
+					<label for="equipment-id">Equipment:</label>
+					<select id="equipment-id" name="equipment_id" required>
+						<option value="">Select equipment</option>
+						<option value="7">Digital Multimeter - IEC Lab</option>
+						<option value="8">DC Power Supply - IEC Lab</option>
+						<option value="12">Oscilloscope - Electronic Device Lab</option>
+						<option value="15">Function Generator - Electronic Device Lab</option>
+						<option value="20">Digital Logic Trainer Kit - Digital Logic Circuit Lab</option>
+						<option value="25">8086 Microprocessor Trainer Kit - Microprocessor Lab</option>
+						<option value="28">Arduino Uno Board - Microprocessor Lab</option>
+					</select>
+					<br />
+					<label for="booking-date">Date:</label>
+					<input type="date" id="booking-date" name="booking_date" required />
+					<br />
+					<label for="start-time">Start Time:</label>
+					<input type="time" id="start-time" name="start_time" required />
+					<br />
+					<label for="end-time">End Time:</label>
+					<input type="time" id="end-time" name="end_time" required />
+					<br />
+					<label for="purpose">Purpose:</label>
+					<br />
+					<textarea id="purpose" name="purpose" rows="3" cols="40" maxlength="250" placeholder="Why do you need this equipment?" required></textarea>
+					<br />
+					<input type="checkbox" id="agree-rules" name="agree_rules" required /> Agree to the lab rules
+					<br />
+					<br />
+					<button type="submit">Submit Request</button>
+					<button type="reset">Reset</button>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

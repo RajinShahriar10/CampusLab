@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Log | CampusLab</title>
+</head>
+
+<body>
+    <div class="app-layout">
+
+        <aside class="sidebar">
+            <h1>CampusLab</h1>
+            <p>Lab Technician</p>
+
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="approval-queue.html">Approval Queue</a></li>
+                    <li><a href="check-in-out.html">Check-in / Check-out</a></li>
+                    <li><a href="maintenance-log.html">Maintenance Log</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="../common/profile.html">My Profile</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <h2 class="page-title">Maintenance Log</h2>
+
+            <section class="card">
+                <h3>Record Equipment Maintenance</h3>
+
+                <form action="#" method="post" enctype="multipart/form-data">
+
+                    <fieldset>
+                        <legend>Maintenance Information</legend>
+
+                        <label for="equipment_id">Equipment:</label>
+                        <select id="equipment_id" name="equipment_id" required>
+                            <option value="">Select Equipment</option>
+                            <option value="EQ-001">EQ-001 - Oscilloscope</option>
+                            <option value="EQ-002">EQ-002 - Microscope</option>
+                            <option value="EQ-003">EQ-003 - Multimeter</option>
+                        </select>
+
+                        <label for="maintenance_type">Maintenance Type:</label>
+                        <select id="maintenance_type" name="maintenance_type" required>
+                            <option value="">Select Maintenance Type</option>
+                            <option value="preventive">Preventive</option>
+                            <option value="corrective">Corrective</option>
+                            <option value="inspection">Inspection</option>
+                        </select>
+
+                        <label for="maintenance_status">Maintenance Status:</label>
+                        <select id="maintenance_status" name="maintenance_status" required>
+                            <option value="">Select Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="in_progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                        </select>
+
+                        <label for="date_performed">Date Performed:</label>
+                        <input type="date" id="date_performed" name="date_performed" required>
+
+                        <label for="next_due_date">Next Due Date:</label>
+                        <input type="date" id="next_due_date" name="next_due_date">
+
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" required></textarea>
+
+                        <label for="parts_replaced">Parts Replaced:</label>
+                        <input type="text" id="parts_replaced" name="parts_replaced">
+
+                        <input type="checkbox" id="set_unavailable" name="set_unavailable" value="yes">
+                        <label for="set_unavailable">Mark equipment as unavailable</label>
+
+                        <label for="attachment">Upload Attachment:</label>
+                        <input type="file" id="attachment" name="attachment">
+
+                    </fieldset>
+
+                    <button type="submit">Save Maintenance Record</button>
+
+                </form>
+            </section>
+
+            <section class="card">
+                <h3>Maintenance History</h3>
+
+                <table>
+                    <caption>Equipment Maintenance History</caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Maintenance ID</th>
+                            <th scope="col">Equipment ID</th>
+                            <th scope="col">Maintenance Type</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Date Performed</th>
+                            <th scope="col">Next Due Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>MT-001</td>
+                            <td>EQ-001</td>
+                            <td>Preventive</td>
+                            <td>Completed</td>
+                            <td>20-10-2026</td>
+                            <td>20-01-2027</td>
+                        </tr>
+
+                        <tr>
+                            <td>MT-002</td>
+                            <td>EQ-002</td>
+                            <td>Corrective</td>
+                            <td>In Progress</td>
+                            <td>25-10-2026</td>
+                            <td>25-11-2026</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - CampusLab</title>
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <nav class="sidebar">
+            <h2>CampusLab</h2>
+            <a href="../index.html">Back to Home</a>
+        </nav>
+
+        <main class="main-content">
+
+            <h1 class="page-title">My Profile</h1>
+
+            <section class="card">
+                <h2>Profile Information</h2>
+
+                <img src="../assets/images/common/placeholder.png"
+                     alt="Profile picture"
+                     width="120">
+
+                <dl>
+                    <dt>Full Name:</dt>
+                    <dd>Ayesha Rahman</dd>
+
+                    <dt>ID:</dt>
+                    <dd>TECH-001</dd>
+
+                    <dt>Email:</dt>
+                    <dd>ayesha@example.com</dd>
+
+                    <dt>Phone:</dt>
+                    <dd>01700000000</dd>
+
+                    <dt>Department:</dt>
+                    <dd>Computer Science</dd>
+
+                    <dt>Role:</dt>
+                    <dd>Lab Technician</dd>
+                </dl>
+
+                <a href="profile-edit.html">Edit Profile</a>
+            </section>
+
+            <section class="card">
+                <h2>Delete Account</h2>
+
+                <p>Enter your password and confirm before deleting your account.</p>
+
+                <form action="#" method="post">
+
+                    <fieldset>
+                        <legend>Account Confirmation</legend>
+
+                        <label for="confirm_password">Password:</label>
+                        <input type="password"
+                               id="confirm_password"
+                               name="confirm_password"
+                               required>
+
+                        <br><br>
+
+                        <input type="checkbox"
+                               id="confirm_delete"
+                               name="confirm_delete"
+                               value="yes"
+                               required>
+
+                        <label for="confirm_delete">
+                            I confirm that I want to delete my account.
+                        </label>
+
+                    </fieldset>
+
+                    <br>
+
+                    <button type="submit">Delete Account</button>
+
+                </form>
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

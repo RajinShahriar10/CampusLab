@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule | CampusLab</title>
+</head>
+
+<body>
+    <div class="app-layout">
+
+        <aside class="sidebar">
+            <h1>CampusLab</h1>
+            <p>Lab Technician</p>
+
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="approval-queue.html">Approval Queue</a></li>
+                    <li><a href="check-in-out.html">Check-in / Check-out</a></li>
+                    <li><a href="maintenance-log.html">Maintenance Log</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="../common/profile.html">My Profile</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <h2 class="page-title">Lab Schedule</h2>
+
+            <section class="card">
+                <h3>View Daily Schedule</h3>
+
+                <form action="#" method="get">
+
+                    <fieldset>
+                        <legend>Schedule Filters</legend>
+
+                        <label for="schedule_date">Select Date:</label>
+                        <input type="date" id="schedule_date" name="schedule_date" required>
+
+                        <label for="lab_id">Select Lab:</label>
+                        <select id="lab_id" name="lab_id">
+                            <option value="">All Labs</option>
+                            <option value="LAB-01">Lab 1</option>
+                            <option value="LAB-02">Lab 2</option>
+                            <option value="LAB-03">Lab 3</option>
+                        </select>
+
+                    </fieldset>
+
+                    <button type="submit">View Schedule</button>
+
+                </form>
+            </section>
+
+            <section class="card">
+                <h3>Daily Schedule</h3>
+
+                <table>
+                    <caption>Equipment Booking Schedule</caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Time Slot</th>
+                            <th scope="col">Equipment</th>
+                            <th scope="col">Student</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>09:00 AM - 10:00 AM</td>
+                            <td>Oscilloscope</td>
+                            <td>Rahim Ahmed</td>
+                            <td>Approved</td>
+                        </tr>
+
+                        <tr>
+                            <td>10:00 AM - 11:00 AM</td>
+                            <td>Microscope</td>
+                            <td>Karim Hasan</td>
+                            <td>Checked-in</td>
+                        </tr>
+
+                        <tr>
+                            <td>11:00 AM - 12:00 PM</td>
+                            <td>Multimeter</td>
+                            <td>Fatima Akter</td>
+                            <td>Pending</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="card">
+                <h3>Lab Utilisation</h3>
+
+                <table>
+                    <caption>Daily Lab Utilisation Summary</caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Lab</th>
+                            <th scope="col">Booked Hours</th>
+                            <th scope="col">Available Hours</th>
+                            <th scope="col">Utilisation</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Lab 1</td>
+                            <td>5 hours</td>
+                            <td>3 hours</td>
+                            <td>62.5%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Lab 2</td>
+                            <td>6 hours</td>
+                            <td>2 hours</td>
+                            <td>75%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Lab 3</td>
+                            <td>4 hours</td>
+                            <td>4 hours</td>
+                            <td>50%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>

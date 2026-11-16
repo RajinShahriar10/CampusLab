@@ -41,7 +41,7 @@ hr {
 	border: 1px solid #cfdde3;
 }
 
-/* sidebar on the left, it stays fixed when the page scrolls */
+/* sidebar*/
 .sidebar {
 	width: 230px;
 	height: 100%;
@@ -241,7 +241,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
 	width: 190px;
 }
 
-/* status words (Approved, Pending ...) */
+/* status*/
 .status, .badge {
 	display: inline-block;
 	padding: 2px 10px;
@@ -321,7 +321,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
 	width: 100%;
 }
 
-/* dashboard boxes */
+/* dashboard */
 .summary-row {
 	display: flex;
 	gap: 16px;
@@ -367,7 +367,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
 	border-radius: 50%;
 }
 
-/* white box, used on the index page */
+/*card */
 .card {
 	margin-bottom: 18px;
 	padding: 6px 22px 14px 22px;
@@ -382,7 +382,6 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
 	line-height: 1.9;
 }
 
-/* a form inside .card does not need a second box */
 .card fieldset {
 	padding: 4px 0 8px 0;
 	border: none;
@@ -412,7 +411,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
 	width: 31%;
 }
 
-/* phone screens */
+/*responsive*/
 @media (max-width: 800px) {
 	.sidebar {
 		width: 100%;

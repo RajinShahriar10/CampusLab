@@ -1,0 +1,448 @@
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #1f2937;
+	background-color: #f1f5f9;
+}
+
+a {
+	color: #1f7a8c;
+}
+
+a:hover {
+	color: #0e3d56;
+}
+
+img {
+	max-width: 100%;
+}
+
+h2 {
+	margin-top: 0;
+	padding-bottom: 12px;
+	font-size: 24px;
+	color: #0e3d56;
+	border-bottom: 2px solid #cfdde3;
+}
+
+h3 {
+	margin: 22px 0 10px 0;
+	font-size: 17px;
+	color: #0e3d56;
+}
+
+h4 {
+	margin: 0 0 4px 0;
+	font-size: 15px;
+}
+
+hr {
+	border: 1px solid #cfdde3;
+}
+
+/* sidebar on the left, it stays fixed when the page scrolls */
+.sidebar {
+	width: 230px;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow: auto;
+	padding-top: 28px;
+	background-color: #0e3d56;
+	color: white;
+}
+
+.sidebar h1 {
+	margin: 0 0 6px 0;
+	font-size: 22px;
+	text-align: center;
+}
+
+.sidebar p {
+	margin: 0 14px 24px 14px;
+	font-size: 12px;
+	text-align: center;
+	color: #cfe3ea;
+}
+
+.sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.sidebar a {
+	display: block;
+	padding: 12px 26px;
+	font-size: 13px;
+	color: white;
+	text-decoration: none;
+}
+
+.sidebar a:hover {
+	background-color: #17606f;
+}
+
+.sidebar a.active {
+	background-color: #1f7a8c;
+	font-weight: bold;
+}
+
+.main-content {
+	margin-left: 230px;
+	padding: 28px 36px 50px 36px;
+}
+
+/* forms */
+form {
+	max-width: 720px;
+}
+
+fieldset {
+	margin-bottom: 16px;
+	padding: 18px 22px 20px 22px;
+	background-color: white;
+	border: 1px solid #cfdde3;
+	border-radius: 6px;
+}
+
+legend {
+	padding: 0 8px;
+	font-weight: bold;
+	color: #1f7a8c;
+}
+
+label {
+	display: inline-block;
+	min-width: 190px;
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="number"], input[type="date"], input[type="time"], input[type="file"], select, textarea {
+	width: 300px;
+	max-width: 100%;
+	margin: 4px 0 8px 0;
+	padding: 8px 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	border: 1px solid #b9c7ce;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+textarea {
+	width: 100%;
+}
+
+input[type="radio"], input[type="checkbox"] {
+	margin: 8px 6px 8px 0;
+}
+
+/* buttons, the colors are for different actions */
+button, input[type="submit"], input[type="reset"], .btn {
+	display: inline-block;
+	margin: 10px 8px 0 0;
+	padding: 9px 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: white;
+	background-color: #1f7a8c;
+	border: none;
+	border-radius: 4px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover, input[type="reset"]:hover, .btn:hover {
+	background-color: #17606f;
+	color: white;
+}
+
+input[type="reset"], button[type="reset"], .btn-secondary {
+	background-color: #64748b;
+}
+
+.btn-success {
+	background-color: #15803d;
+}
+
+.btn-warning {
+	background-color: #b45309;
+}
+
+.btn-danger {
+	background-color: #dc2626;
+}
+
+.btn-secondary:hover, .btn-success:hover, .btn-warning:hover, .btn-danger:hover {
+	opacity: 0.8;
+}
+
+/* tables */
+.table-wrap {
+	overflow-x: auto;
+	margin-bottom: 10px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: white;
+}
+
+caption {
+	padding-bottom: 8px;
+	text-align: left;
+	font-size: 17px;
+	font-weight: bold;
+	color: #0e3d56;
+}
+
+th, td {
+	padding: 10px 12px;
+	border: 1px solid #cfdde3;
+	text-align: left;
+	vertical-align: top;
+}
+
+th {
+	color: white;
+	background-color: #0e3d56;
+}
+
+td img {
+	width: 44px;
+	height: 44px;
+	border-radius: 4px;
+}
+
+/* small forms inside a table row */
+td form {
+	max-width: none;
+	margin-top: 8px;
+}
+
+td fieldset {
+	margin-bottom: 6px;
+	padding: 6px 12px 12px 12px;
+}
+
+td label {
+	display: block;
+	min-width: 0;
+	font-size: 12px;
+}
+
+td input[type="text"], td input[type="date"], td input[type="time"], td select {
+	width: 190px;
+}
+
+/* status words (Approved, Pending ...) */
+.status, .badge {
+	display: inline-block;
+	padding: 2px 10px;
+	font-size: 12px;
+	font-weight: bold;
+	color: white;
+	background-color: #64748b;
+	border-radius: 12px;
+}
+
+.available, .approved, .active-status, .resolved {
+	background-color: #15803d;
+}
+
+.booked, .pending, .checked-out, .in-progress, .under-maintenance, .waitlisted {
+	background-color: #b45309;
+}
+
+.rejected, .cancelled, .faulty, .no-show, .inactive {
+	background-color: #dc2626;
+}
+
+.checked-in {
+	background-color: #1f7a8c;
+}
+
+.completed, .retired {
+	background-color: #64748b;
+}
+
+/* equipment cards */
+.equipment-list {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 16px;
+}
+
+.equipment-card {
+	display: flex;
+	box-sizing: border-box;
+	width: 48%;
+	padding: 14px;
+	background-color: white;
+	border: 1px solid #cfdde3;
+	border-radius: 6px;
+}
+
+.equipment-card img {
+	width: 80px;
+	height: 80px;
+	margin-right: 14px;
+	border: 1px solid #cfdde3;
+	border-radius: 4px;
+}
+
+.equipment-info {
+	flex: 1;
+}
+
+.equipment-info p {
+	margin: 2px 0 8px 0;
+}
+
+.equipment-info fieldset {
+	margin-bottom: 0;
+	padding: 4px 12px 12px 12px;
+}
+
+.equipment-info label {
+	display: block;
+	min-width: 0;
+	font-size: 12px;
+}
+
+.equipment-info input[type="date"], .equipment-info input[type="time"] {
+	width: 100%;
+}
+
+/* dashboard boxes */
+.summary-row {
+	display: flex;
+	gap: 16px;
+	margin-bottom: 24px;
+}
+
+.summary-box {
+	flex: 1;
+	padding: 16px 18px;
+	background-color: white;
+	border: 1px solid #cfdde3;
+	border-top: 4px solid #1f7a8c;
+	border-radius: 4px;
+}
+
+.summary-box h3 {
+	margin: 0 0 8px 0;
+	font-size: 14px;
+}
+
+.summary-box p {
+	margin: 0;
+}
+
+.qr-box {
+	display: inline-block;
+	padding: 16px 20px;
+	text-align: center;
+	background-color: white;
+	border: 1px solid #cfdde3;
+	border-radius: 6px;
+}
+
+.qr-box p {
+	margin: 8px 0 0 0;
+	font-size: 12px;
+}
+
+.profile-photo {
+	width: 110px;
+	height: 110px;
+	border: 1px solid #cfdde3;
+	border-radius: 50%;
+}
+
+/* white box, used on the index page */
+.card {
+	margin-bottom: 18px;
+	padding: 6px 22px 14px 22px;
+	background-color: white;
+	border: 1px solid #cfdde3;
+	border-radius: 6px;
+}
+
+.card ul {
+	margin: 0;
+	padding-left: 20px;
+	line-height: 1.9;
+}
+
+/* a form inside .card does not need a second box */
+.card fieldset {
+	padding: 4px 0 8px 0;
+	border: none;
+}
+
+.card form {
+	max-width: none;
+}
+
+.card legend {
+	padding: 0 0 8px 0;
+	font-size: 16px;
+}
+
+.form-group {
+	margin-bottom: 6px;
+}
+
+.index-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 18px;
+}
+
+.index-grid .card {
+	box-sizing: border-box;
+	width: 31%;
+}
+
+/* phone screens */
+@media (max-width: 800px) {
+	.sidebar {
+		width: 100%;
+		height: auto;
+		position: relative;
+		padding-bottom: 10px;
+	}
+
+	.main-content {
+		margin-left: 0;
+		padding: 20px 16px 40px 16px;
+	}
+
+	label {
+		display: block;
+	}
+
+	input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="number"], input[type="date"], input[type="time"], input[type="file"], select {
+		width: 100%;
+	}
+
+	.summary-row {
+		display: block;
+	}
+
+	.summary-box {
+		margin-bottom: 12px;
+	}
+
+	.equipment-card, .index-grid .card {
+		width: 100%;
+	}
+}

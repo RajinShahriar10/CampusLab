@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-in / Check-out | CampusLab</title>
+</head>
+
+<body>
+    <div class="app-layout">
+
+        <aside class="sidebar">
+            <h1>CampusLab</h1>
+            <p>Lab Technician</p>
+
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="approval-queue.html">Approval Queue</a></li>
+                    <li><a href="check-in-out.html">Check-in / Check-out</a></li>
+                    <li><a href="maintenance-log.html">Maintenance Log</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="../common/profile.html">My Profile</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <h2 class="page-title">Check-in / Check-out</h2>
+
+            <section class="card">
+                <h3>Equipment Check-in / Check-out Console</h3>
+
+                <form action="#" method="post">
+
+                    <fieldset>
+                        <legend>Reservation Information</legend>
+
+                        <label for="reservation_id">Reservation ID:</label>
+                        <input type="text" id="reservation_id" name="reservation_id">
+
+                        <p>OR</p>
+
+                        <label for="qr_code">QR Code:</label>
+                        <input type="text" id="qr_code" name="qr_code">
+
+                        <label for="student_id">Student ID:</label>
+                        <input type="text" id="student_id" name="student_id" required>
+
+                        <label for="equipment_id">Equipment ID:</label>
+                        <input type="text" id="equipment_id" name="equipment_id" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Check-out Equipment Condition</legend>
+
+                        <p>Select the equipment condition:</p>
+
+                        <input type="radio" id="good" name="equipment_condition" value="good">
+                        <label for="good">Good</label>
+
+                        <input type="radio" id="minor_wear" name="equipment_condition" value="minor_wear">
+                        <label for="minor_wear">Minor Wear</label>
+
+                        <input type="radio" id="damaged" name="equipment_condition" value="damaged">
+                        <label for="damaged">Damaged</label>
+
+                        <label for="condition_notes">Condition Notes:</label>
+                        <textarea id="condition_notes" name="condition_notes"></textarea>
+                    </fieldset>
+
+                    <button type="submit" name="action" value="check_in">
+                        Check-in
+                    </button>
+
+                    <button type="submit" name="action" value="check_out">
+                        Check-out
+                    </button>
+
+                    <button type="submit" name="action" value="no_show">
+                        Mark No-show
+                    </button>
+
+                </form>
+            </section>
+
+            <section class="card">
+                <h3>Recent Activity</h3>
+
+                <table>
+                    <caption>Recent Equipment Check-in / Check-out Activity</caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Reservation ID</th>
+                            <th scope="col">Student ID</th>
+                            <th scope="col">Equipment ID</th>
+                            <th scope="col">Activity</th>
+                            <th scope="col">Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>101</td>
+                            <td>22-12345-1</td>
+                            <td>EQ-001</td>
+                            <td>Check-in</td>
+                            <td>25-10-2026</td>
+                        </tr>
+
+                        <tr>
+                            <td>102</td>
+                            <td>22-12346-1</td>
+                            <td>EQ-002</td>
+                            <td>Check-out</td>
+                            <td>26-10-2026</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>

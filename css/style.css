@@ -141,7 +141,7 @@ input[type="radio"], input[type="checkbox"] {
 	margin: 8px 6px 8px 0;
 }
 
-/* buttons, the colors are for different actions */
+/* buttons*/
 button, input[type="submit"], input[type="reset"], .btn {
 	display: inline-block;
 	margin: 10px 8px 0 0;
@@ -220,7 +220,6 @@ td img {
 	border-radius: 4px;
 }
 
-/* small forms inside a table row */
 td form {
 	max-width: none;
 	margin-top: 8px;

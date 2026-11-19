@@ -7,7 +7,7 @@ next_reservation_p.innerText = first.equipment + " - " + first.lab + " (" + firs
 
 let pending_count = 0;
 
-function countPending(reservation) {
+function countPending(reservation){
 	if (reservation.status === "Pending") {
 		pending_count++;
 	}

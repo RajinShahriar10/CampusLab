@@ -1,7 +1,7 @@
 let equipment_list = document.getElementById('equipment-list');
 let equipment_select = document.getElementById('equipment-id');
 
-function addEquipmentItem(item) {
+function addEquipmentItem(item){
 	let img = document.createElement('img');
 	img.src = "../assets/images/" + item.image;
 	img.alt = item.name;

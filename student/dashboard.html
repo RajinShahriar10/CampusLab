@@ -1,34 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Student Dashboard</title>
 	<link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
+
 	<div class="container">
+
 		<div class="sidebar">
+
 			<h1>CampusLab</h1>
 			<p>Student</p>
+
 			<ul>
-				<li><a href="dashboard.html">Dashboard</a></li>
+				<li><a href="dashboard.html" >Dashboard</a></li>
 				<li><a href="equipment-catalogue.html">Book Equipment</a></li>
-				<li><a href="my-reservations.html">My Reservations</a></li>
-				<li><a href="report-fault.html">Report Fault</a></li>
+				<li><a href="my-reservations.html" >My Reservations</a></li>
+				<li><a href="report-fault.html" >Report Fault</a></li>
 				<li><a href="../common/profile.html">Profile</a></li>
 			</ul>
 		</div>
 		<div class="main-content">
 			<h2>Student Dashboard</h2>
 			<h3>Next Reservation</h3>
-			<p id="next-reservation"></p>
+			<p id="next-reservation" ></p>
 			<h3>Pending Requests</h3>
-			<p id="pending-count"></p>
+			<p id="pending-count" ></p>
 			<h3>My Reservations</h3>
 			<p><a href="my-reservations.html">View QR for approved reservations</a></p>
 			<br />
+
 			<form id="availability-form" action="#" method="get">
+
 				<fieldset>
 					<legend>Live Equipment Availability</legend>
 					<label for="lab-id">Lab:</label>
@@ -36,20 +40,22 @@
 						<option value="">All labs</option>
 						<option value="1">IEC (Introduction to Electrical Circuits) Lab</option>
 						<option value="2">Electronic Device Lab</option>
-						<option value="3">Digital Logic Circuit Lab</option>
-						<option value="4">Microprocessor Lab</option>
+						<option value="3" >Digital Logic Circuit Lab</option>
+						<option value="4" >Microprocessor Lab</option>
 					</select>
 					<br />
+
 					<label for="category">Category:</label>
 					<select id="category" name="category">
 						<option value="">All categories</option>
-						<option value="measuring_instrument">Measuring Instrument</option>
+						<option value="measuring_instrument" >Measuring Instrument</option>
 						<option value="power_supply">Power Supply</option>
-						<option value="signal_generator">Signal Generator</option>
+						<option value="signal_generator" >Signal Generator</option>
 						<option value="trainer_kit">Trainer Kit</option>
 						<option value="microcontroller_board">Microcontroller Board</option>
 					</select>
 					<br />
+
 					<label for="search-date">Date:</label>
 					<input type="date" id="search-date" name="search_date" />
 					<br />
@@ -58,12 +64,17 @@
 					<br />
 					<input type="submit" value="Search" />
 				</fieldset>
+
 			</form>
+
 			<br />
-			<div id="availability-list"></div>
-		</div>
+		<div id="availability-list"></div>
+		 </div>
+
 	</div>
+
 	<script src="../assets/js/data.js"></script>
 	<script src="../assets/js/dashboard.js"></script>
+	
 </body>
 </html>

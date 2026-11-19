@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Equipment Catalogue</title>
 	<link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
+
 	<div class="container">
+
 		<div class="sidebar">
+
 			<h1>CampusLab</h1>
 			<p>Student</p>
+
 			<ul>
-				<li><a href="dashboard.html">Dashboard</a></li>
+				<li><a href="dashboard.html" >Dashboard</a></li>
 				<li><a href="equipment-catalogue.html">Book Equipment</a></li>
 				<li><a href="my-reservations.html">My Reservations</a></li>
-				<li><a href="report-fault.html">Report Fault</a></li>
-				<li><a href="../common/profile.html">Profile</a></li>
+				<li><a href="report-fault.html" >Report Fault</a></li>
+				<li><a href="../common/profile.html" >Profile</a></li>
 			</ul>
+
 		</div>
+
 		<div class="main-content">
 			<h2>Equipment Catalogue and Booking</h2>
 			<form id="filter-form" action="#" method="get">
@@ -32,7 +36,9 @@
 						<option value="3">Digital Logic and Circuits Lab</option>
 						<option value="4">Microprocessor Lab</option>
 					</select>
+
 					<br />
+
 					<label for="category">Category:</label>
 					<select id="category" name="category">
 						<option value="">All categories</option>
@@ -42,17 +48,26 @@
 						<option value="trainer_kit">Trainer Kit</option>
 						<option value="microcontroller_board">Microcontroller Board</option>
 					</select>
+
 					<br />
+
 					<label for="search">Search:</label>
 					<input type="text" id="search" name="search" placeholder="e.g. Oscilloscope, Multimeter" />
+
 					<br />
+
 					<input type="submit" value="Search" />
+				
 				</fieldset>
-			</form>
+
+			     </form>
 			<br />
+
+
 			<h3>Equipment List</h3>
 			<div id="equipment-list"></div>
 			<h3 id="booking-request">Booking Request</h3>
+
 			<form id="booking-form" action="#" method="post">
 				<fieldset>
 					<legend>Booking Request Form</legend>
@@ -60,7 +75,9 @@
 					<select id="equipment-id" name="equipment_id" required>
 						<option value="">Select equipment</option>
 						</select>
+
 					<br />
+
 					<label for="booking-date">Date:</label>
 					<input type="date" id="booking-date" name="booking_date" required />
 					<br />
@@ -79,11 +96,16 @@
 					<br />
 					<button type="submit">Submit Request</button>
 					<button type="reset">Reset</button>
-				</fieldset>
+
+				   </fieldset>
 			</form>
+
 		</div>
 	</div>
+
+
 	<script src="../assets/js/data.js"></script>
 	<script src="../assets/js/equipment-catalogue.js"></script>
+	
 </body>
 </html>

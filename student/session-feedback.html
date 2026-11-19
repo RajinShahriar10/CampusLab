@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Session Feedback</title>
 	<link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
+
 	<div class="container">
 		<div class="sidebar">
 			<h1>CampusLab</h1>
 			<p>Student</p>
+
 			<ul>
-				<li><a href="dashboard.html">Dashboard</a></li>
+				<li><a href="dashboard.html" >Dashboard</a></li>
 				<li><a href="equipment-catalogue.html">Book Equipment</a></li>
-				<li><a href="my-reservations.html">My Reservations</a></li>
+				<li><a href="my-reservations.html" >My Reservations</a></li>
 				<li><a href="report-fault.html">Report Fault</a></li>
-				<li><a href="../common/profile.html">Profile</a></li>
+				<li><a href="../common/profile.html" >Profile</a></li>
 			</ul>
+
 		</div>
 		<div class="main-content">
 			<h2>Session Feedback</h2>
+
 			<form id="feedback-form" action="#" method="post">
 				<fieldset>
 					<legend>Feedback</legend>
@@ -49,6 +51,7 @@
 						<option value="fair">Fair</option>
 						<option value="poor">Poor</option>
 					</select>
+
 					<br />
 					<label>Was the technician helpful:</label>
 					<br />
@@ -63,11 +66,15 @@
 					<input type="submit" value="Submit Feedback" />
 					<input type="reset" />
 				</fieldset>
+
 			</form>
+
 			<p id="feedback-message"></p>
 		</div>
 	</div>
+
 	<script src="../assets/js/data.js"></script>
 	<script src="../assets/js/session-feedback.js"></script>
+
 </body>
 </html>

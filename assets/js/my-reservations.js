@@ -1,7 +1,7 @@
 let upcoming_div = document.getElementById('upcoming');
 let past_div = document.getElementById('past');
 
-function makeTable() {
+function makeTable(){
 	let table = document.createElement('table');
 
 	let header_row = document.createElement('tr');
@@ -40,10 +40,6 @@ function addReservationRow(reservation) {
 	let equipment_td = document.createElement('td');
 	equipment_td.innerText = reservation.equipment;
 	row.appendChild(equipment_td);
-
-	// let lab_td = document.createElement('td');
-	// lab_td.innerText = reservation.lab;
-	// row.appendChild(lab_td);
 
 	let td_html = "<td>" + reservation.lab + "</td>";
 	td_html += "<td>" + reservation.time + "</td>";
@@ -106,5 +102,5 @@ function addReservationRow(reservation) {
 		upcoming_table.appendChild(row);
 	}
 }
- 
+
 reservations.forEach(addReservationRow);

@@ -4,7 +4,7 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Equipment Catalogue</title>
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 	<div class="container">
@@ -21,7 +21,7 @@
 		</div>
 		<div class="main-content">
 			<h2>Equipment Catalogue and Booking</h2>
-			<form action="#" method="get">
+			<form id="filter-form" action="#" method="get">
 				<fieldset>
 					<legend>Filter and Search</legend>
 					<label for="lab-id">Lab:</label>
@@ -51,87 +51,15 @@
 			</form>
 			<br />
 			<h3>Equipment List</h3>
-			<img src="../assets/images/Digital Multimeter.jpeg" alt="Digital Multimeter" width="80" height="80" />
-			<h4>Digital Multimeter</h4>
-			<p>IEC Lab | Measuring Instrument</p>
-			<p>Status: Available</p>
-			<a href="#booking-request">Book</a>
-			<hr />
-			<img src="../assets/images/DC Power Supply.jpeg" alt="DC Power Supply" width="80" height="80" />
-			<h4>DC Power Supply</h4>
-			<p>IEC Lab | Power Supply</p>
-			<p>Status: Available</p>
-			<a href="#booking-request">Book</a>
-			<hr />
-			<img src="../assets/images/oscilloscope.jpeg" alt="Oscilloscope" width="80" height="80" />
-			<h4>Oscilloscope</h4>
-			<p>Electronic Device Lab | Measuring Instrument</p>
-			<p>Status: Available</p>
-			<a href="#booking-request">Book</a>
-			<hr />
-			<img src="../assets/images/Function Generator.jpeg" alt="Function Generator" width="80" height="80" />
-			<h4>Function Generator</h4>
-			<p>Electronic Device Lab | Signal Generator</p>
-			<p>Status: Booked</p>
-			<form action="#" method="post">
-				<fieldset>
-					<legend>Join Waitlist</legend>
-						<input type="hidden" name="equipment_id" value="15" />
-					<label for="preferred-date-15">Preferred Date:</label>
-					<input type="date" id="preferred-date-15" name="preferred_date" required />
-					<br />
-					<label for="waitlist-start-15">Start Time:</label>
-					<input type="time" id="waitlist-start-15" name="start_time" required />
-					<br />
-					<label for="waitlist-end-15">End Time:</label>
-					<input type="time" id="waitlist-end-15" name="end_time" required />
-					<br />
-					<button type="submit">Join Waitlist</button>
-				</fieldset>
-			</form>
-			<hr />
-			<img src="../assets/images/Digital Logic Trainer Kit.jpeg" alt="Digital Logic Trainer Kit" width="80" height="80" />
-			<h4>Digital Logic Trainer Kit</h4>
-			<p>Digital Logic and Circuits Lab | Trainer Kit</p>
-			<p>Status: Available</p>
-			<a href="#booking-request">Book</a>
-			<hr />
-			<img src="../assets/images/8086 Microprocessor Trainer Kit.jpeg" alt="8086 Microprocessor Trainer Kit" width="80" height="80" />
-			<h4>8086 Microprocessor Trainer Kit</h4>
-			<p>Microprocessor Lab | Trainer Kit</p>
-			<p>Status: Booked</p>
-			<form action="#" method="post">
-				<fieldset>
-					<legend>Join Waitlist</legend>
-						<input type="hidden" name="equipment_id" value="25" />
-					<label for="preferred-date-25">Preferred Date:</label>
-					<input type="date" id="preferred-date-25" name="preferred_date" required />
-					<br />
-					<label for="waitlist-start-25">Start Time:</label>
-					<input type="time" id="waitlist-start-25" name="start_time" required />
-					<br />
-					<label for="waitlist-end-25">End Time:</label>
-					<input type="time" id="waitlist-end-25" name="end_time" required />
-					<br />
-					<button type="submit">Join Waitlist</button>
-				</fieldset>
-			</form>
-			<hr />
+			<div id="equipment-list"></div>
 			<h3 id="booking-request">Booking Request</h3>
-			<form action="#" method="post">
+			<form id="booking-form" action="#" method="post">
 				<fieldset>
 					<legend>Booking Request Form</legend>
 					<label for="equipment-id">Equipment:</label>
 					<select id="equipment-id" name="equipment_id" required>
 						<option value="">Select equipment</option>
-						<option value="7">Digital Multimeter - IEC Lab</option>
-						<option value="8">DC Power Supply - IEC Lab</option>
-						<option value="12">Oscilloscope - Electronic Device Lab</option>
-						<option value="15">Function Generator - Electronic Device Lab</option>
-						<option value="20">Digital Logic Trainer Kit - Digital Logic Circuit Lab</option>
-						<option value="25">8086 Microprocessor Trainer Kit - Microprocessor Lab</option>
-						<option value="28">Arduino Uno Board - Microprocessor Lab</option>
-					</select>
+						</select>
 					<br />
 					<label for="booking-date">Date:</label>
 					<input type="date" id="booking-date" name="booking_date" required />
@@ -155,5 +83,7 @@
 			</form>
 		</div>
 	</div>
+	<script src="../assets/js/data.js"></script>
+	<script src="../assets/js/equipment-catalogue.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Session Feedback</title>
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 	<div class="container">
@@ -21,14 +21,12 @@
 		</div>
 		<div class="main-content">
 			<h2>Session Feedback</h2>
-			<form action="#" method="post">
+			<form id="feedback-form" action="#" method="post">
 				<fieldset>
 					<legend>Feedback</legend>
 					<label for="reservation-id">Completed Reservation:</label>
 					<select id="reservation-id" name="reservation_id" required>
 						<option value="">Select a reservation</option>
-						<option value="98">Digital Logic Trainer Kit - 20-10-2026 09:00-10:00</option>
-						<option value="96">8086 Microprocessor Trainer Kit - 18-10-2026 11:00-12:00</option>
 					</select>
 					<br />
 					<label>Rating (1 = poor, 5 = excellent):</label>
@@ -66,7 +64,10 @@
 					<input type="reset" />
 				</fieldset>
 			</form>
+			<p id="feedback-message"></p>
 		</div>
 	</div>
+	<script src="../assets/js/data.js"></script>
+	<script src="../assets/js/session-feedback.js"></script>
 </body>
 </html>

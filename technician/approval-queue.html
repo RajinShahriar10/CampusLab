@@ -2,16 +2,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title>Approval Queue - CampusLab</title>
 </head>
 <body>
-
     <header>
         <h1>CampusLab - Lab Technician</h1>
     </header>
-
     <nav>
         <h2>Technician Menu</h2>
         <ul>
@@ -23,15 +20,13 @@
             <li><a href="../common/profile.html">My Profile</a></li>
         </ul>
     </nav>
-
     <main>
+        <main class="approval-queue">
+        </main>
         <h2>Reservation Approval Queue</h2>
-
         <section>
             <h3>Filter Requests</h3>
-
             <form action="#" method="get">
-
                 <label for="status">Request Status:</label>
                 <select id="status" name="status">
                     <option value="">All Statuses</option>
@@ -39,7 +34,6 @@
                     <option value="approved">Approved</option>
                     <option value="rejected">Rejected</option>
                 </select>
-
                 <label for="lab_id">Laboratory:</label>
                 <select id="lab_id" name="lab_id">
                     <option value="">All Labs</option>
@@ -47,20 +41,15 @@
                     <option value="lab2">Lab 2</option>
                     <option value="lab3">Lab 3</option>
                 </select>
-
                 <label for="request_date">Request Date:</label>
                 <input type="date" id="request_date" name="request_date">
-
                 <button type="submit">Filter</button>
             </form>
         </section>
-
         <section>
             <h3>Reservation Requests</h3>
-
             <table border="1">
                 <caption>List of Student Reservation Requests</caption>
-
                 <thead>
                     <tr>
                         <th scope="col">Student</th>
@@ -72,7 +61,6 @@
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     <tr>
                         <td>Rahim Ahmed</td>
@@ -81,7 +69,6 @@
                         <td>25-10-2026, 10:00 - 11:00</td>
                         <td>Electronics Experiment</td>
                         <td>No conflict</td>
-
                         <td>
                             <form action="#" method="post">
                                 <input type="hidden" name="reservation_id" value="101">
@@ -89,10 +76,8 @@
                                     Approve
                                 </button>
                             </form>
-
                             <form action="#" method="post">
                                 <input type="hidden" name="reservation_id" value="101">
-
                                 <label for="rejection_reason">Rejection Reason:</label>
                                 <select id="rejection_reason" name="rejection_reason" required>
                                     <option value="">Select Reason</option>
@@ -100,14 +85,12 @@
                                     <option value="schedule_conflict">Schedule Conflict</option>
                                     <option value="incomplete_information">Incomplete Information</option>
                                 </select>
-
                                 <button type="submit" name="action" value="reject">
                                     Reject
                                 </button>
                             </form>
                         </td>
                     </tr>
-
                     <tr>
                         <td>Karim Hasan</td>
                         <td>Microscope</td>
@@ -115,7 +98,6 @@
                         <td>26-10-2026, 12:00 - 13:00</td>
                         <td>Biology Practical</td>
                         <td>Conflict with #104</td>
-
                         <td>
                             <form action="#" method="post">
                                 <input type="hidden" name="reservation_id" value="102">
@@ -123,10 +105,8 @@
                                     Approve
                                 </button>
                             </form>
-
                             <form action="#" method="post">
                                 <input type="hidden" name="reservation_id" value="102">
-
                                 <label for="reason_102">Rejection Reason:</label>
                                 <select id="reason_102" name="rejection_reason" required>
                                     <option value="">Select Reason</option>
@@ -134,7 +114,6 @@
                                     <option value="schedule_conflict">Schedule Conflict</option>
                                     <option value="incomplete_information">Incomplete Information</option>
                                 </select>
-
                                 <button type="submit" name="action" value="reject">
                                     Reject
                                 </button>
@@ -145,10 +124,8 @@
             </table>
         </section>
     </main>
-
     <footer>
         <p>CampusLab - Lab Technician Panel</p>
     </footer>
-
 </body>
 </html>

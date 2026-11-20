@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="../assets/js/technician.js" defer></script>
     <link rel="stylesheet" href="../assets/css/style.css">
     <title>Check-in / Check-out | CampusLab</title>
 </head>
@@ -25,7 +26,7 @@
             <h2 class="page-title">Check-in / Check-out</h2>
             <section class="card">
                 <h3>Equipment Check-in / Check-out Console</h3>
-                <form action="#" method="post">
+                <form action="#" method="post" id="checkin-form" onsubmit="return handleCheckInOut(event)">
                     <fieldset>
                         <legend>Reservation Information</legend>
                         <label for="reservation_id">Reservation ID:</label>
@@ -74,7 +75,7 @@
                             <th scope="col">Date</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="activity-list">
                         <tr>
                             <td>101</td>
                             <td>22-12345-1</td>

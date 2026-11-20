@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Technician Workload | CampusLab</title>
+	<link rel="stylesheet" href="incharge-style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="sidebar">
+			<h1>CampusLab</h1>
+			<p>Lab In-Charge</p>
+			<ul>
+				<li><a href="dashboard.html">Dashboard</a></li>
+				<li><a href="lab-schedule.html">Lab Schedule</a></li>
+				<li><a class="active" href="technician-workload.html">Technician Workload</a></li>
+				<li><a href="reports.html">Reports</a></li>
+			</ul>
+		</div>
+		<div class="main-content">
+			<h2>Technician Workload Monitoring</h2>
+			<p>Review technician activity and reservation workload.</p>
+
+			<form action="#" method="get">
+				<fieldset>
+					<legend>Filter Workload</legend>
+					<label for="filter-technician-id">Technician:</label>
+					<select id="filter-technician-id" name="technician_id">
+						<option value="">All technicians</option>
+							<option value="101">Technician 101</option>
+							<option value="102">Technician 102</option>
+					</select>
+					<br />
+					<label for="status">Reservation Status:</label>
+					<select id="status" name="status">
+						<option value="">All statuses</option>
+						<option value="pending">Pending</option>
+						<option value="approved">Approved</option>
+						<option value="completed">Completed</option>
+					</select>
+					<br />
+					<label for="from-date">From Date:</label>
+					<input type="date" id="from-date" name="from_date" />
+					<br />
+					<label for="to-date">To Date:</label>
+					<input type="date" id="to-date" name="to_date" />
+					<br />
+					<button type="submit">Apply Filters</button>
+					<input type="reset" />
+				</fieldset>
+			</form>
+			<br />
+
+			<div class="table-wrap">
+				<table>
+					<caption>Reservation workload and latest activity by technician</caption>
+					<tr>
+						<th>Technician ID</th>
+						<th>Technician Name</th>
+						<th>Pending</th>
+						<th>Approved</th>
+						<th>Completed</th>
+						<th>Last Activity</th>
+						<th>Reassign</th>
+					</tr>
+					<tr>
+						<td>101</td>
+						<td>Technician 101</td>
+						<td>5</td>
+						<td>8</td>
+						<td>24</td>
+						<td>03-11-2026 14:30</td>
+						<td>
+							<form action="#" method="post">
+								<input type="hidden" name="technician_id" value="101" />
+								<label for="new-lab-id-101">New Laboratory:</label>
+								<select id="new-lab-id-101" name="new_lab_id" required>
+									<option value="">Select laboratory</option>
+								<option value="1">IEC Lab</option>
+								<option value="2">Electronic Device Lab</option>
+								<option value="3">Digital Logic and Circuits Lab</option>
+								<option value="4">Microprocessor Lab</option>
+								</select>
+								<button type="submit">Reassign</button>
+							</form>
+						</td>
+					</tr>
+					<tr>
+						<td>102</td>
+						<td>Technician 102</td>
+						<td>3</td>
+						<td>6</td>
+						<td>19</td>
+						<td>03-11-2026 12:15</td>
+						<td>
+							<form action="#" method="post">
+								<input type="hidden" name="technician_id" value="102" />
+								<label for="new-lab-id-102">New Laboratory:</label>
+								<select id="new-lab-id-102" name="new_lab_id" required>
+									<option value="">Select laboratory</option>
+								<option value="1">IEC Lab</option>
+								<option value="2">Electronic Device Lab</option>
+								<option value="3">Digital Logic and Circuits Lab</option>
+								<option value="4">Microprocessor Lab</option>
+								</select>
+								<button type="submit">Reassign</button>
+							</form>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

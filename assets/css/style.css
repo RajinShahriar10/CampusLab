@@ -41,7 +41,7 @@ hr{
 	border: 1px solid #cfdde3;
 }
 
-/* sidebar*/
+
 .sidebar{
 	width: 230px;
 	height: 100%;
@@ -95,7 +95,7 @@ hr{
 	padding: 28px 36px 50px 36px;
 }
 
-/* forms */
+
 form{
 	max-width: 720px;
 }
@@ -141,7 +141,7 @@ input[type="radio"], input[type="checkbox"] {
 	margin: 8px 6px 8px 0;
 }
 
-/* buttons*/
+
 button, input[type="submit"], input[type="reset"], .btn {
 	display: inline-block;
 	margin: 10px 8px 0 0;
@@ -182,7 +182,7 @@ input[type="reset"], button[type="reset"], .btn-secondary {
 	opacity: 0.8;
 }
 
-/* tables */
+
 .table-wrap{
 	overflow-x: auto;
 	margin-bottom: 10px;
@@ -240,7 +240,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
 	width: 190px;
 }
 
-/* status*/
+
 .status, .badge{
 	display: inline-block;
 	padding: 2px 10px;
@@ -271,7 +271,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
 	background-color: #64748b;
 }
 
-/* equipment cards */
+
 .equipment-list{
 	display: flex;
 	flex-wrap: wrap;
@@ -320,7 +320,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
 	width: 100%;
 }
 
-/* dashboard */
+
 .summary-row{
 	display: flex;
 	gap: 16px;
@@ -366,7 +366,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
 	border-radius: 50%;
 }
 
-/*card */
+
 .card{
 	margin-bottom: 18px;
 	padding: 6px 22px 14px 22px;
@@ -410,9 +410,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
 	width: 31%;
 }
 
-/*Name: Nasrin Jahan Basma->Lab Technician*/
 
-/*Dashboard*/
 .technician-dashboard .page-title {
     margin-bottom: 20px;
 }
@@ -432,7 +430,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
 .technician-dashboard .card a:hover {
     text-decoration: underline;
 }
-/*Approval Queue*/
+
 .approval-queue .page-title {
     margin-bottom: 20px;
 }
@@ -448,7 +446,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
 .approval-queue button {
     margin-bottom: 5px;
 }
-/*Check-in and Check-out*/
+
 .check-in-out .page-title {
     margin-bottom: 20px;
 }
@@ -470,7 +468,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
 .check-in-out table {
     width: 100%;
 }
-/*Maintenance Log*/
+/
 .maintenance-log .page-title {
     margin-bottom: 20px;
 }
@@ -492,7 +490,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
 .maintenance-log button {
     margin-top: 10px;
 }
-/*Technician Schedule*/
+
 .technician-schedule .page-title {
     margin-bottom: 20px;
 }
@@ -511,7 +509,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
 .technician-schedule button {
     margin-top: 10px;
 }
-/*Profile Edit*/
+
 .profile-edit .page-title {
     margin-bottom: 20px;
 }
@@ -527,7 +525,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
 .profile-edit button {
     margin-top: 10px;
 }
-/* Profile Page */
+
 .profile-page .page-title {
     margin-bottom: 20px;
 }
@@ -549,9 +547,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
     margin-top: 10px;
 }
 
-/*Name: Md. Abidur Rahman -> Administrator*/
 
-/*Admin Dashboard*/
 .admin-dashboard .page-title {
     margin-bottom: 20px;
 }
@@ -585,7 +581,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
     width: 100%;
 }
 
-/*Manage Users*/
+
 .manage-users .page-title {
     margin-bottom: 20px;
 }
@@ -618,7 +614,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
     font-size: 12px;
 }
 
-/*Manage Labs*/
+
 .manage-labs .page-title {
     margin-bottom: 20px;
 }
@@ -640,7 +636,6 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
     font-size: 12px;
 }
 
-/*Manage Equipment*/
 .manage-equipment .page-title {
     margin-bottom: 20px;
 }
@@ -666,7 +661,6 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
     font-size: 12px;
 }
 
-/*Reports & Audit Log*/
 .reports-audit .page-title {
     margin-bottom: 20px;
 }
@@ -686,7 +680,7 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
     margin-top: 10px;
 }
 
-/*Announcements*/
+
 .announcements .page-title {
     margin-bottom: 20px;
 }
@@ -711,7 +705,6 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
     font-size: 12px;
 }
 
-/*Change Password*/
 .change-password .page-title {
     margin-bottom: 20px;
 }

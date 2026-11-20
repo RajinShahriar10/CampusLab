@@ -24,8 +24,8 @@
 			</ul>
 		</div>
 
-		<div class="main-content">
-			<h2>Manage Users</h2>
+		<div class="main-content manage-users">
+			<h2 class="page-title">Manage Users</h2>
 
 			<!-- Add User Form -->
 			<form id="add-user-form" action="#" method="post" onsubmit="return validateAddUser(this)" novalidate>
@@ -143,16 +143,40 @@
 								<button type="button" class="btn-warning" onclick="toggleUserStatus(this)">Deactivate</button>
 							</td>
 						</tr>
+						<tr id="user-row-3">
+							<td>Md. Abidur Rahman</td>
+							<td>22-48662-3<br /><small>abidur@aiub.edu</small></td>
+							<td>CSE</td>
+							<td class="user-role-cell">Lab Supervisor</td>
+							<td><span class="status active-status">Active</span></td>
+							<td>
+								<form action="#" method="post" onsubmit="return validateChangeRole(this, 3)" novalidate>
+									<select name="new_role" id="new-role-3" required>
+										<option value="">Change Role</option>
+										<option value="student">Student</option>
+										<option value="technician" selected>Technician</option>
+										<option value="incharge">In-Charge</option>
+										<option value="admin">Admin</option>
+									</select>
+									<button type="submit">Update</button>
+								</form>
+								<button type="button" class="btn-warning" onclick="toggleUserStatus(this)">Deactivate</button>
+							</td>
+						</tr>
+						
+								<button type="button" class="btn-warning" onclick="toggleUserStatus(this)">Deactivate</button>
+							</td>
+						</tr>
 					</tbody>
-					<tr id="user-row-3">
+					<tr id="user-row-4">
 							<td>Shah Md. Akil Akhtab</td>
 							<td>19-32104-2<br /><small>akhtab@aiub.edu</small></td>
 							<td>EEE</td>
 							<td class="user-role-cell">Lab In-Charge</td>
 							<td><span class="status active-status">Active</span></td>
 							<td>
-								<form action="#" method="post" onsubmit="return validateChangeRole(this, 3)" novalidate>
-									<select name="new_role" id="new-role-3" required>
+								<form action="#" method="post" onsubmit="return validateChangeRole(this, 4)" novalidate>
+									<select name="new_role" id="new-role-4" required>
 										<option value="">Change Role</option>
 										<option value="student">Student</option>
 										<option value="technician">Technician</option>

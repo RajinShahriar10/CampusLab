@@ -1,6 +1,3 @@
-// CampusLab - Administrator JavaScript (Md. Abidur Rahman - Member 4)
-
-// Sample data arrays representing system data
 let users = [
 	{ id: "24-57561-2", name: "Md. Rajin Shahriar", email: "rajin@student.aiub.edu", dept: "CSE", role: "Student", status: "Active" },
 	{ id: "22-45123-1", name: "Nasrin Jahan Basma", email: "nasrin@aiub.edu", dept: "EEE", role: "Lab Technician", status: "Active" },
@@ -25,6 +22,11 @@ let reservations = [
 	{ id: 103, student: "Kazi Fahim", equipment: "Function Generator", status: "Completed" }
 ];
 
+let requests = [
+	{ id: 201, user: "Md. Rajin Shahriar", item: "Digital Multimeter", status: "Approved" },
+	{ id: 202, user: "Tanzim Hasan", item: "8086 Trainer Kit", status: "Pending" }
+];
+
 let auditLog = [
 	{ timestamp: "2026-11-20 16:30:10", actor: "Md. Abidur Rahman", action: "CREATE_USER", target: "User: 25-10023-1", ip: "192.168.1.15" },
 	{ timestamp: "2026-11-20 15:45:22", actor: "Md. Rajin Shahriar", action: "LOGIN", target: "Student Portal", ip: "192.168.1.42" },
@@ -32,12 +34,10 @@ let auditLog = [
 	{ timestamp: "2026-11-20 11:10:05", actor: "Nasrin Jahan Basma", action: "CHECKOUT", target: "Equipment: EQ-101", ip: "192.168.1.18" }
 ];
 
-// Initialize Dashboard numbers and table on page load
 window.addEventListener("DOMContentLoaded", function () {
 	initAdminDashboard();
 });
 
-// Calculate metrics and populate latest audit table
 function initAdminDashboard () {
 	let usersCount = document.getElementById("total-users-count");
 	let labsCount = document.getElementById("total-labs-count");
@@ -60,7 +60,6 @@ function initAdminDashboard () {
 	let auditTbody = document.getElementById("latest-audit-tbody");
 	if (auditTbody) {
 		auditTbody.innerHTML = "";
-		// Take newest three entries
 		let count = 0;
 		for (let i = 0; i < auditLog.length && count < 3; i++) {
 			let entry = auditLog[i];
@@ -75,18 +74,11 @@ function initAdminDashboard () {
 	}
 }
 
-// -----------------------------------------------------------------------------
-// Manage Users Functions
-// -----------------------------------------------------------------------------
-
-// Live search filter on the users table
 function filterUsers () {
 	let text = document.getElementById("search").value.toLowerCase();
-	let rows = document.querySelectorAll("#users-table tbody tr");
-
-	for (let i = 0; i < rows.length; i++) {
-		let rowText = rows[i].innerText.toLowerCase();
-		if (rowText.includes(text)) {
+	let rows = document.querySelectorAll("#users-table tr");
+	for (let i = 1; i < rows.length; i++) {
+		if (rows[i].innerText.toLowerCase().includes(text)) {
 			rows[i].style.display = "";
 		} else {
 			rows[i].style.display = "none";
@@ -94,7 +86,6 @@ function filterUsers () {
 	}
 }
 
-// Validate Add User form and append new row
 function validateAddUser (form) {
 	let fullName = document.getElementById("full-name").value;
 	let email = document.getElementById("email").value;
@@ -106,29 +97,17 @@ function validateAddUser (form) {
 
 	clearErrors();
 
-	if (isEmpty(fullName)) {
-		showError("full-name", "Full name is required");
-		valid = false;
-	} else if (fullName.trim().length < 3 || fullName.trim().length > 100) {
+	if (isEmpty(fullName) || fullName.trim().length < 3 || fullName.trim().length > 100 || !/^[a-zA-Z .-]+$/.test(fullName.trim())) {
 		showError("full-name", "Full name must be at least 3 characters");
-		valid = false;
-	} else if (!/^[a-zA-Z .-]+$/.test(fullName.trim())) {
-		showError("full-name", "Full name can only contain letters, spaces, and dots");
 		valid = false;
 	}
 
-	if (isEmpty(email)) {
-		showError("email", "Email address is required");
-		valid = false;
-	} else if (!isEmail(email)) {
+	if (isEmpty(email) || !isEmail(email)) {
 		showError("email", "Enter a valid email address");
 		valid = false;
 	}
 
-	if (isEmpty(studentId)) {
-		showError("student-id", "ID is required");
-		valid = false;
-	} else if (!isStudentId(studentId)) {
+	if (isEmpty(studentId) || !isStudentId(studentId)) {
 		showError("student-id", "Use the format 24-57561-2");
 		valid = false;
 	}
@@ -143,16 +122,12 @@ function validateAddUser (form) {
 		valid = false;
 	}
 
-	if (isEmpty(tempPassword)) {
-		showError("temporary-password", "Temporary password is required");
-		valid = false;
-	} else if (!isStrongPassword(tempPassword)) {
+	if (isEmpty(tempPassword) || !isStrongPassword(tempPassword)) {
 		showError("temporary-password", "Password needs 8+ characters with a letter and a number");
 		valid = false;
 	}
 
 	if (valid) {
-		// Append new row to users table
 		let tbody = document.getElementById("users-tbody");
 		if (tbody) {
 			let newRowId = "user-row-" + (tbody.children.length + 1);
@@ -190,7 +165,6 @@ function validateAddUser (form) {
 			tbody.appendChild(newRow);
 		}
 
-		// Also record into users array
 		users.push({
 			id: studentId,
 			name: fullName,
@@ -211,7 +185,6 @@ function validateAddUser (form) {
 	return false;
 }
 
-// Change user role from table row
 function validateChangeRole (form, rowId) {
 	let select = form.querySelector("select[name='new_role']");
 	if (!select || isEmpty(select.value)) {
@@ -239,7 +212,6 @@ function validateChangeRole (form, rowId) {
 	return false;
 }
 
-// Toggle user active / inactive status
 function toggleUserStatus (button) {
 	let row = button.closest("tr");
 	let statusSpan = row ? row.querySelector(".status") : null;
@@ -261,11 +233,6 @@ function toggleUserStatus (button) {
 	}
 }
 
-// -----------------------------------------------------------------------------
-// Manage Labs Functions
-// -----------------------------------------------------------------------------
-
-// Validate Lab form
 function validateLab (form) {
 	let labName = document.getElementById("lab-name").value;
 	let labCode = document.getElementById("lab-code").value;
@@ -285,7 +252,7 @@ function validateLab (form) {
 
 	let labCodeRegex = /^LAB-[0-9]{2}$/;
 	if (isEmpty(labCode) || !labCodeRegex.test(labCode.trim())) {
-		showError("lab-code", "Lab code must be in format LAB-01");
+		showError("lab-code", "Use the format LAB-01");
 		valid = false;
 	}
 
@@ -320,7 +287,6 @@ function validateLab (form) {
 		let isEdit = labIdField && labIdField.value !== "";
 
 		if (isEdit) {
-			// Update existing row
 			let row = document.getElementById(labIdField.value);
 			if (row) {
 				row.querySelector(".col-name").innerText = labName;
@@ -338,7 +304,6 @@ function validateLab (form) {
 			}
 			resetLabForm();
 		} else {
-			// Append new row
 			let tbody = document.getElementById("labs-tbody");
 			if (tbody) {
 				let rowCount = tbody.children.length + 1;
@@ -357,8 +322,8 @@ function validateLab (form) {
 					"<td class='col-capacity'>" + capacity + "</td>" +
 					"<td class='col-status'><span class='status active-status'>" + (status.charAt(0).toUpperCase() + status.slice(1)) + "</span></td>" +
 					"<td>" +
-						'<button type="button" onclick="editLab(\'' + rowId + '\')">Edit</button> ' +
-						'<form action="#" method="post" onsubmit="return deleteLabRow(this, \'' + rowId + '\')" novalidate>' +
+						"<button type='button' onclick='editLab(this)'>Edit</button> " +
+						"<form action='#' method='post' onsubmit='return deleteLabRow(this)' novalidate>" +
 							"<input type='checkbox' id='confirm-delete-lab-" + rowCount + "' name='confirm_delete' required /> Confirm " +
 							"<br /><span class='error' id='confirm-delete-lab-" + rowCount + "-error'></span>" +
 							"<button type='submit' class='btn-danger'>Delete</button>" +
@@ -380,13 +345,18 @@ function validateLab (form) {
 	return false;
 }
 
-// Edit lab: copy row values into the form
-function editLab (rowId) {
-	let row = document.getElementById(rowId);
+function editLab (btnOrId) {
+	let row;
+	if (typeof btnOrId === "string") {
+		row = document.getElementById(btnOrId);
+	} else {
+		row = btnOrId.closest("tr");
+	}
 	if (!row) {
 		return;
 	}
 
+	let rowId = row.id;
 	document.getElementById("lab-id-field").value = rowId;
 	document.getElementById("lab-code").value = row.querySelector(".col-code").innerText.trim();
 	document.getElementById("lab-name").value = row.querySelector(".col-name").innerText.trim();
@@ -407,7 +377,6 @@ function editLab (rowId) {
 	document.getElementById("lab-name").focus();
 }
 
-// Reset lab form to add mode
 function resetLabForm () {
 	let labIdField = document.getElementById("lab-id-field");
 	if (labIdField) {
@@ -424,7 +393,6 @@ function resetLabForm () {
 	clearErrors();
 }
 
-// Delete lab row with confirmation
 function deleteLabRow (form, rowId) {
 	let confirmCheck = form.querySelector("input[name='confirm_delete']");
 	let errorSpan = form.querySelector(".error");
@@ -437,7 +405,7 @@ function deleteLabRow (form, rowId) {
 	}
 
 	if (confirm("Delete this lab?")) {
-		let row = document.getElementById(rowId);
+		let row = rowId ? document.getElementById(rowId) : form.closest("tr");
 		if (row) {
 			row.remove();
 		}
@@ -446,11 +414,6 @@ function deleteLabRow (form, rowId) {
 	return false;
 }
 
-// -----------------------------------------------------------------------------
-// Manage Equipment Functions
-// -----------------------------------------------------------------------------
-
-// Validate Add Equipment form
 function validateEquipment (form) {
 	let name = document.getElementById("equipment-name").value;
 	let code = document.getElementById("equipment-code").value;
@@ -472,7 +435,7 @@ function validateEquipment (form) {
 
 	let codeRegex = /^EQ-[0-9]{3}$/;
 	if (isEmpty(code) || !codeRegex.test(code.trim())) {
-		showError("equipment-code", "Equipment code must be in format EQ-101");
+		showError("equipment-code", "Use the format EQ-101");
 		valid = false;
 	}
 
@@ -482,12 +445,12 @@ function validateEquipment (form) {
 	}
 
 	if (isEmpty(labId)) {
-		showError("lab-id", "Select an assigned lab");
+		showError("lab-id", "Select a lab");
 		valid = false;
 	}
 
 	if (isEmpty(status)) {
-		showError("equipment-status", "Select equipment status");
+		showError("equipment-status", "Select a status");
 		valid = false;
 	}
 
@@ -498,19 +461,16 @@ function validateEquipment (form) {
 	}
 
 	if (isEmpty(purchaseDate)) {
-		showError("purchase-date", "Purchase date is required");
+		showError("purchase-date", "Date cannot be in the future");
 		valid = false;
 	} else if (isFutureDate(purchaseDate)) {
-		showError("purchase-date", "Purchase date cannot be in the future");
+		showError("purchase-date", "Date cannot be in the future");
 		valid = false;
 	}
 
 	if (fileInput && fileInput.files && fileInput.files.length > 0) {
-		if (!isImageFile(fileInput)) {
+		if (!isImageFile(fileInput) || isTooBig(fileInput, MAX_FILE_MB)) {
 			showError("equipment-image", "Choose an image (JPG or PNG) under 2 MB");
-			valid = false;
-		} else if (isTooBig(fileInput, MAX_FILE_MB)) {
-			showError("equipment-image", "File size must be under 2 MB");
 			valid = false;
 		}
 	}
@@ -521,7 +481,6 @@ function validateEquipment (form) {
 	}
 
 	if (valid) {
-		// Append row to equipment table
 		let tbody = document.getElementById("equipment-tbody");
 		if (tbody) {
 			let count = tbody.children.length + 1;
@@ -544,7 +503,7 @@ function validateEquipment (form) {
 				"<td>" + maxHours + " hrs</td>" +
 				"<td><span class='status active-status'>Available</span></td>" +
 				"<td>" +
-					'<form action="#" method="post" onsubmit="return deleteEquipmentRow(this, \'' + rowId + '\')" novalidate>' +
+					"<form action='#' method='post' onsubmit='return deleteEquipmentRow(this)' novalidate>" +
 						"<input type='checkbox' id='confirm-delete-eq-" + count + "' name='confirm_delete' required /> Confirm " +
 						"<br /><span class='error' id='confirm-delete-eq-" + count + "-error'></span>" +
 						"<button type='submit' class='btn-danger'>Delete</button>" +
@@ -565,7 +524,6 @@ function validateEquipment (form) {
 	return false;
 }
 
-// Live filter of equipment table by lab
 function filterEquipmentByLab () {
 	let filter = document.getElementById("filter-lab").value;
 	let rows = document.querySelectorAll("#equipment-table tbody tr");
@@ -580,7 +538,6 @@ function filterEquipmentByLab () {
 	}
 }
 
-// Delete equipment row with confirmation
 function deleteEquipmentRow (form, rowId) {
 	let confirmCheck = form.querySelector("input[name='confirm_delete']");
 	let errorSpan = form.querySelector(".error");
@@ -593,7 +550,7 @@ function deleteEquipmentRow (form, rowId) {
 	}
 
 	if (confirm("Delete this equipment?")) {
-		let row = document.getElementById(rowId);
+		let row = rowId ? document.getElementById(rowId) : form.closest("tr");
 		if (row) {
 			row.remove();
 		}
@@ -602,11 +559,6 @@ function deleteEquipmentRow (form, rowId) {
 	return false;
 }
 
-// -----------------------------------------------------------------------------
-// Reports & Audit Trail Functions
-// -----------------------------------------------------------------------------
-
-// Validate Report form
 function validateReport (form) {
 	let reportType = document.getElementById("report-type").value;
 	let fromDate = document.getElementById("from-date").value;
@@ -651,7 +603,6 @@ function validateReport (form) {
 	return false;
 }
 
-// Validate Audit filter form
 function validateAuditFilter (form) {
 	let actor = document.getElementById("actor").value;
 	let fromDate = document.getElementById("audit-from").value;
@@ -661,7 +612,7 @@ function validateAuditFilter (form) {
 	clearErrors();
 
 	if (!isEmpty(actor) && !/^[a-zA-Z .-]+$/.test(actor.trim())) {
-		showError("actor", "Actor name can only contain letters, spaces, and dots");
+		showError("actor", "Actor name can only contain letters and dots");
 		valid = false;
 	}
 
@@ -679,7 +630,6 @@ function validateAuditFilter (form) {
 	return false;
 }
 
-// Live filter of audit table by action type
 function filterAuditTableByAction () {
 	let action = document.getElementById("action-type").value;
 	let rows = document.querySelectorAll("#audit-table tbody tr");
@@ -694,16 +644,10 @@ function filterAuditTableByAction () {
 	}
 }
 
-// -----------------------------------------------------------------------------
-// Announcements Functions
-// -----------------------------------------------------------------------------
-
-// Live counter for announcement message
 function countAnnouncementChars () {
 	countChars("announcement-message", "message-char-count", 500);
 }
 
-// Validate Announcement form and append row
 function validateAnnouncement (form) {
 	let title = document.getElementById("announcement-title").value;
 	let message = document.getElementById("announcement-message").value;
@@ -728,7 +672,7 @@ function validateAnnouncement (form) {
 	if (audCheckboxes.length === 0) {
 		let audError = document.getElementById("audience-error");
 		if (audError) {
-			audError.innerText = "Select at least one target audience";
+			audError.innerText = "Select at least one audience";
 		}
 		valid = false;
 	}
@@ -742,7 +686,7 @@ function validateAnnouncement (form) {
 	}
 
 	if (isEmpty(publishDate)) {
-		showError("publish-date", "Publish date is required");
+		showError("publish-date", "Date cannot be in the past");
 		valid = false;
 	} else if (isPastDate(publishDate)) {
 		showError("publish-date", "Date cannot be in the past");
@@ -786,7 +730,7 @@ function validateAnnouncement (form) {
 				"<td><span class='badge " + badgeClass + "'>" + priority + "</span></td>" +
 				"<td>" + publishDate + "</td>" +
 				"<td>" + expiryDate + "</td>" +
-				'<td><button type="button" class="btn-danger" onclick="deleteAnnouncementRow(\'' + rowId + '\')">Delete</button></td>';
+				"<td><button type='button' class='btn-danger' onclick='deleteAnnouncementRow(this)'>Delete</button></td>";
 
 			tbody.appendChild(newRow);
 		}
@@ -803,21 +747,15 @@ function validateAnnouncement (form) {
 	return false;
 }
 
-// Delete announcement row with confirmation
-function deleteAnnouncementRow (rowId) {
+function deleteAnnouncementRow (btnOrId) {
 	if (confirm("Are you sure you want to delete this announcement?")) {
-		let row = document.getElementById(rowId);
+		let row = (typeof btnOrId === "string") ? document.getElementById(btnOrId) : btnOrId.closest("tr");
 		if (row) {
 			row.remove();
 		}
 	}
 }
 
-// -----------------------------------------------------------------------------
-// Change Password Functions
-// -----------------------------------------------------------------------------
-
-// Live password strength indicator
 function checkNewPasswordStrength () {
 	let pw = document.getElementById("new-password").value;
 	let indicator = document.getElementById("password-strength-indicator");
@@ -838,7 +776,6 @@ function checkNewPasswordStrength () {
 	}
 }
 
-// Validate Change Password form
 function validateChangePassword (form) {
 	let currentPw = document.getElementById("current-password").value;
 	let newPw = document.getElementById("new-password").value;
@@ -847,18 +784,12 @@ function validateChangePassword (form) {
 
 	clearErrors();
 
-	if (isEmpty(currentPw)) {
-		showError("current-password", "Current password is required");
-		valid = false;
-	} else if (currentPw.length < 8) {
+	if (isEmpty(currentPw) || currentPw.length < 8) {
 		showError("current-password", "Password must be at least 8 characters");
 		valid = false;
 	}
 
-	if (isEmpty(newPw)) {
-		showError("new-password", "New password is required");
-		valid = false;
-	} else if (!isStrongPassword(newPw)) {
+	if (isEmpty(newPw) || !isStrongPassword(newPw)) {
 		showError("new-password", "Password needs 8+ characters with a letter and a number");
 		valid = false;
 	} else if (newPw === currentPw) {
@@ -866,10 +797,7 @@ function validateChangePassword (form) {
 		valid = false;
 	}
 
-	if (isEmpty(confirmPw)) {
-		showError("confirm-new-password", "Please confirm your new password");
-		valid = false;
-	} else if (confirmPw !== newPw) {
+	if (isEmpty(confirmPw) || confirmPw !== newPw) {
 		showError("confirm-new-password", "Passwords do not match");
 		valid = false;
 	}

@@ -1,13 +1,12 @@
-// CampusLab - Shared Validation Helpers (CSC 3215 Web Technologies)
-
 var MAX_BOOKING_HOURS = 2;
 var LAB_OPEN = "09:00";
 var LAB_CLOSE = "17:00";
 var MAX_FILE_MB = 2;
 var SERVER_READY = false;
+var firstErrorField = null;
 
-// Clears all red borders and error messages on the form
 function clearErrors () {
+	firstErrorField = null;
 	let errors = document.querySelectorAll(".error");
 	for (let i = 0; i < errors.length; i++) {
 		errors[i].innerText = "";
@@ -22,7 +21,6 @@ function clearErrors () {
 	}
 }
 
-// Displays an error message under the specified input field and moves focus if first error
 function showError (id, message) {
 	let field = document.getElementById(id);
 	let errorSpan = document.getElementById(id + "-error");
@@ -31,15 +29,13 @@ function showError (id, message) {
 	}
 	if (field) {
 		field.classList.add("invalid");
-		// focus on the first invalid field
-		let currentFocused = document.querySelector(":focus");
-		if (!currentFocused || !currentFocused.classList.contains("invalid")) {
+		if (!firstErrorField) {
+			firstErrorField = field;
 			field.focus();
 		}
 	}
 }
 
-// Checks if a text value is empty or only whitespace
 function isEmpty (value) {
 	if (value === null || value === undefined) {
 		return true;
@@ -47,25 +43,21 @@ function isEmpty (value) {
 	return value.trim() === "";
 }
 
-// Validates standard email address format
 function isEmail (value) {
 	let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 	return emailRegex.test(value.trim());
 }
 
-// Validates student/faculty ID format like 24-57561-2
 function isStudentId (value) {
 	let idRegex = /^[0-9]{2}-[0-9]{5}-[0-9]{1}$/;
 	return idRegex.test(value.trim());
 }
 
-// Validates 11-digit phone number starting with 01
 function isPhone (value) {
 	let phoneRegex = /^01[0-9]{9}$/;
 	return phoneRegex.test(value.trim());
 }
 
-// Checks for at least 8 characters with at least one letter and one number
 function isStrongPassword (value) {
 	if (value.length < 8) {
 		return false;
@@ -75,7 +67,6 @@ function isStrongPassword (value) {
 	return hasLetter && hasNumber;
 }
 
-// Returns password strength level
 function passwordStrength (value) {
 	if (value.length === 0) {
 		return "";
@@ -96,7 +87,6 @@ function passwordStrength (value) {
 	}
 }
 
-// Checks if date is before today
 function isPastDate (dateStr) {
 	if (isEmpty(dateStr)) {
 		return false;
@@ -107,7 +97,6 @@ function isPastDate (dateStr) {
 	return inputDate < today;
 }
 
-// Checks if date is after today
 function isFutureDate (dateStr) {
 	if (isEmpty(dateStr)) {
 		return false;
@@ -118,7 +107,6 @@ function isFutureDate (dateStr) {
 	return inputDate > today;
 }
 
-// Checks if end time is after start time
 function isEndAfterStart (start, end) {
 	if (isEmpty(start) || isEmpty(end)) {
 		return false;
@@ -126,7 +114,6 @@ function isEndAfterStart (start, end) {
 	return end > start;
 }
 
-// Returns the hour difference between two time strings
 function hoursBetween (start, end) {
 	if (isEmpty(start) || isEmpty(end)) {
 		return 0;
@@ -138,7 +125,13 @@ function hoursBetween (start, end) {
 	return endHours - startHours;
 }
 
-// Checks if selected file is an image
+function inLabHours (timeStr) {
+	if (isEmpty(timeStr)) {
+		return false;
+	}
+	return timeStr >= LAB_OPEN && timeStr <= LAB_CLOSE;
+}
+
 function isImageFile (input) {
 	if (!input || !input.files || input.files.length === 0) {
 		return false;
@@ -148,7 +141,6 @@ function isImageFile (input) {
 	return validTypes.includes(file.type.toLowerCase()) || /\.(jpe?g|png|webp)$/i.test(file.name);
 }
 
-// Checks if file size exceeds maximum megabytes
 function isTooBig (input, maxMB) {
 	if (!input || !input.files || input.files.length === 0) {
 		return false;
@@ -157,7 +149,6 @@ function isTooBig (input, maxMB) {
 	return input.files[0].size > maxBytes;
 }
 
-// Returns value of the checked radio button
 function getRadio (name) {
 	let radios = document.getElementsByName(name);
 	for (let i = 0; i < radios.length; i++) {
@@ -168,7 +159,6 @@ function getRadio (name) {
 	return "";
 }
 
-// Live character counter
 function countChars (textId, counterId, max) {
 	let input = document.getElementById(textId);
 	let counter = document.getElementById(counterId);
@@ -183,7 +173,6 @@ function countChars (textId, counterId, max) {
 	}
 }
 
-// Form finish handler: displays success message and prevents reload
 function finishForm (valid, form) {
 	if (valid) {
 		let successSpan = form.querySelector(".success");

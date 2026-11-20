@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Lab Schedule Management | CampusLab</title>
+	<link rel="stylesheet" href="../assets/css/incharge-style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="sidebar">
+			<h1>CampusLab</h1>
+			<p>Lab In-Charge</p>
+			<ul>
+				<li><a href="dashboard.html">Dashboard</a></li>
+				<li><a class="active" href="lab-schedule.html">Lab Schedule</a></li>
+				<li><a href="technician-workload.html">Technician Workload</a></li>
+				<li><a href="reports.html">Reports</a></li>
+			</ul>
+		</div>
+		<div class="main-content">
+			<h2>Laboratory and Schedule Management</h2>
+			<p>Manage laboratory details, operating hours, and technician assignments.</p>
+
+			<div class="table-wrap">
+				<table>
+					<caption>Laboratories, operating hours and assigned technicians</caption>
+					<tr>
+						<th>Lab ID</th>
+						<th>Laboratory</th>
+						<th>Location</th>
+						<th>Capacity</th>
+						<th>Operating Hours</th>
+						<th>Technician</th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>IEC Lab</td>
+						<td>Building A, Room 301</td>
+						<td>30</td>
+						<td>09:00-17:00</td>
+						<td>Technician 101</td>
+						<td><span class="status active-status">Active</span></td>
+						<td><a href="#lab-details">Edit</a></td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Electronic Device Lab</td>
+						<td>Building A, Room 302</td>
+						<td>25</td>
+						<td>09:00-17:00</td>
+						<td>Technician 102</td>
+						<td><span class="status active-status">Active</span></td>
+						<td><a href="#lab-details">Edit</a></td>
+					</tr>
+				</table>
+			</div>
+			<br />
+
+			<h3 id="lab-details">Add or Edit Laboratory</h3>
+			<form action="#" method="post">
+				<fieldset>
+					<legend>Laboratory Information</legend>
+					<input type="hidden" name="lab_id" value="" />
+					<label for="lab-name">Laboratory Name:</label>
+					<input type="text" id="lab-name" name="lab_name" required />
+					<br />
+					<label for="lab-code">Laboratory Code:</label>
+					<input type="text" id="lab-code" name="lab_code" required />
+					<br />
+					<label for="location">Location:</label>
+					<input type="text" id="location" name="location" required />
+					<br />
+					<label for="capacity">Capacity:</label>
+					<input type="number" id="capacity" name="capacity" min="1" required />
+					<br />
+					<label for="lab-status">Status:</label>
+					<select id="lab-status" name="status" required>
+						<option value="">Select status</option>
+						<option value="active">Active</option>
+						<option value="inactive">Inactive</option>
+					</select>
+					<br />
+					<button type="submit">Save Laboratory</button>
+					<button type="reset">Reset</button>
+				</fieldset>
+			</form>
+			<br />
+
+			<h3>Configure Operating Hours</h3>
+			<form action="#" method="post">
+				<fieldset>
+					<legend>Laboratory Operating Schedule</legend>
+					<label for="hours-lab-id">Laboratory:</label>
+					<select id="hours-lab-id" name="lab_id" required>
+						<option value="">Select laboratory</option>
+							<option value="1">IEC Lab</option>
+							<option value="2">Electronic Device Lab</option>
+							<option value="3">Digital Logic and Circuits Lab</option>
+							<option value="4">Microprocessor Lab</option>
+					</select>
+					<br />
+					<label>Open Days:</label>
+					<br />
+					<input type="checkbox" id="monday" name="open_days[]" value="monday" /> Monday<br />
+					<input type="checkbox" id="tuesday" name="open_days[]" value="tuesday" /> Tuesday<br />
+					<input type="checkbox" id="wednesday" name="open_days[]" value="wednesday" /> Wednesday<br />
+					<input type="checkbox" id="thursday" name="open_days[]" value="thursday" /> Thursday<br />
+					<input type="checkbox" id="friday" name="open_days[]" value="friday" /> Friday<br />
+					<input type="checkbox" id="saturday" name="open_days[]" value="saturday" /> Saturday<br />
+					<input type="checkbox" id="sunday" name="open_days[]" value="sunday" /> Sunday<br />
+					<label for="opening-time">Opening Time:</label>
+					<input type="time" id="opening-time" name="opening_time" required />
+					<br />
+					<label for="closing-time">Closing Time:</label>
+					<input type="time" id="closing-time" name="closing_time" required />
+					<br />
+					<label for="slot-minutes">Slot Duration (minutes):</label>
+					<input type="number" id="slot-minutes" name="slot_minutes" min="1" required />
+					<br />
+					<button type="submit">Save Operating Hours</button>
+					<button type="reset">Reset</button>
+				</fieldset>
+			</form>
+			<br />
+
+			<h3>Assign or Reassign Technician</h3>
+			<form action="#" method="post">
+				<fieldset>
+					<legend>Technician Assignment</legend>
+					<label for="assignment-lab-id">Laboratory:</label>
+					<select id="assignment-lab-id" name="lab_id" required>
+						<option value="">Select laboratory</option>
+							<option value="1">IEC Lab</option>
+							<option value="2">Electronic Device Lab</option>
+							<option value="3">Digital Logic and Circuits Lab</option>
+							<option value="4">Microprocessor Lab</option>
+					</select>
+					<br />
+					<label for="technician-id">Technician:</label>
+					<select id="technician-id" name="technician_id" required>
+						<option value="">Select technician</option>
+							<option value="101">Technician 101</option>
+							<option value="102">Technician 102</option>
+					</select>
+					<br />
+					<label for="effective-date">Effective Date:</label>
+					<input type="date" id="effective-date" name="effective_date" required />
+					<br />
+					<label for="reason">Reason:</label>
+					<br />
+					<textarea id="reason" name="reason" rows="4" cols="40" required></textarea>
+					<br />
+					<button type="submit">Save Assignment</button>
+					<button type="reset">Reset</button>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -2,13 +2,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../assets/css/style.css">
     <title>Approval Queue - CampusLab</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/technician.js" defer></script>
 </head>
 <body>
     <header>
         <h1>CampusLab - Lab Technician</h1>
     </header>
+
     <nav>
         <h2>Technician Menu</h2>
         <ul>
@@ -20,13 +22,18 @@
             <li><a href="../common/profile.html">My Profile</a></li>
         </ul>
     </nav>
-    <main>
-        <main class="approval-queue">
-        </main>
+
+    <main class="approval-queue">
         <h2>Reservation Approval Queue</h2>
+
+        <section>
+            <h3>Pending Requests: <span id="pending-count">2</span></h3>
+        </section>
+
         <section>
             <h3>Filter Requests</h3>
-            <form action="#" method="get">
+
+            <form action="#" method="get" onsubmit="return validateRequestDate()">
                 <label for="status">Request Status:</label>
                 <select id="status" name="status">
                     <option value="">All Statuses</option>
@@ -34,6 +41,7 @@
                     <option value="approved">Approved</option>
                     <option value="rejected">Rejected</option>
                 </select>
+
                 <label for="lab_id">Laboratory:</label>
                 <select id="lab_id" name="lab_id">
                     <option value="">All Labs</option>
@@ -41,82 +49,91 @@
                     <option value="lab2">Lab 2</option>
                     <option value="lab3">Lab 3</option>
                 </select>
+
                 <label for="request_date">Request Date:</label>
                 <input type="date" id="request_date" name="request_date">
+
                 <button type="submit">Filter</button>
             </form>
         </section>
+
         <section>
             <h3>Reservation Requests</h3>
+
             <table border="1">
                 <caption>List of Student Reservation Requests</caption>
                 <thead>
                     <tr>
-                        <th scope="col">Student</th>
-                        <th scope="col">Equipment</th>
-                        <th scope="col">Lab</th>
-                        <th scope="col">Date and Time</th>
-                        <th scope="col">Purpose</th>
-                        <th scope="col">Conflict</th>
-                        <th scope="col">Actions</th>
+                        <th>Student</th>
+                        <th>Equipment</th>
+                        <th>Lab</th>
+                        <th>Date and Time</th>
+                        <th>Purpose</th>
+                        <th>Conflict</th>
+                        <th>Status</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    <tr>
+                    <tr data-equipment="Oscilloscope"
+                        data-start="2026-10-25T10:00"
+                        data-end="2026-10-25T11:00">
                         <td>Rahim Ahmed</td>
                         <td>Oscilloscope</td>
                         <td>Lab 2</td>
                         <td>25-10-2026, 10:00 - 11:00</td>
                         <td>Electronics Experiment</td>
-                        <td>No conflict</td>
+                        <td class="conflict-status">No conflict</td>
+                        <td class="request-status">Pending</td>
                         <td>
-                            <form action="#" method="post">
+                            <form action="#" method="post"
+                                  onsubmit="return handleReservationAction(event)">
                                 <input type="hidden" name="reservation_id" value="101">
-                                <button type="submit" name="action" value="approve">
-                                    Approve
-                                </button>
-                            </form>
-                            <form action="#" method="post">
-                                <input type="hidden" name="reservation_id" value="101">
-                                <label for="rejection_reason">Rejection Reason:</label>
-                                <select id="rejection_reason" name="rejection_reason" required>
+
+                                <label for="rejection-reason-101">Rejection Reason:</label>
+                                <select id="rejection-reason-101" name="rejection_reason">
                                     <option value="">Select Reason</option>
                                     <option value="equipment_unavailable">Equipment Unavailable</option>
                                     <option value="schedule_conflict">Schedule Conflict</option>
                                     <option value="incomplete_information">Incomplete Information</option>
                                 </select>
-                                <button type="submit" name="action" value="reject">
-                                    Reject
-                                </button>
+
+                                <span id="rejection-reason-101-error"></span>
+
+                                <button type="submit" name="action" value="approve">Approve</button>
+                                <button type="submit" name="action" value="reject">Reject</button>
                             </form>
                         </td>
                     </tr>
-                    <tr>
+
+                    <tr data-equipment="Microscope"
+                        data-start="2026-10-26T12:00"
+                        data-end="2026-10-26T13:00">
                         <td>Karim Hasan</td>
                         <td>Microscope</td>
                         <td>Lab 1</td>
                         <td>26-10-2026, 12:00 - 13:00</td>
                         <td>Biology Practical</td>
-                        <td>Conflict with #104</td>
+                        <td class="conflict-status">No conflict</td>
+                        <td class="request-status">Pending</td>
                         <td>
-                            <form action="#" method="post">
+                            <form action="#" method="post"
+                                  onsubmit="return handleReservationAction(event)">
                                 <input type="hidden" name="reservation_id" value="102">
-                                <button type="submit" name="action" value="approve">
-                                    Approve
-                                </button>
-                            </form>
-                            <form action="#" method="post">
-                                <input type="hidden" name="reservation_id" value="102">
-                                <label for="reason_102">Rejection Reason:</label>
-                                <select id="reason_102" name="rejection_reason" required>
+
+                                <label for="rejection-reason-102">Rejection Reason:</label>
+                                <select id="rejection-reason-102" name="rejection_reason">
                                     <option value="">Select Reason</option>
                                     <option value="equipment_unavailable">Equipment Unavailable</option>
                                     <option value="schedule_conflict">Schedule Conflict</option>
                                     <option value="incomplete_information">Incomplete Information</option>
                                 </select>
-                                <button type="submit" name="action" value="reject">
-                                    Reject
-                                </button>
+
+                                <span id="rejection-reason-102-error"></span>
+
+                                <button type="submit" name="action" value="approve">Approve</button>
+                                <button type="submit" name="action" value="reject">Reject</button>
                             </form>
                         </td>
                     </tr>
@@ -124,8 +141,10 @@
             </table>
         </section>
     </main>
+
     <footer>
         <p>CampusLab - Lab Technician Panel</p>
     </footer>
 </body>
 </html>
+

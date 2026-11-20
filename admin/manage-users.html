@@ -18,7 +18,7 @@
 				<li><a class="active" href="manage-users.html">Manage Users</a></li>
 				<li><a href="manage-labs.html">Manage Labs</a></li>
 				<li><a href="manage-equipment.html">Manage Equipment</a></li>
-				<li><a href="reports-audit-log.html">Reports & Audit Log</a></li>
+				<li><a href="reports-audit-log.html">Reports &amp; Audit Log</a></li>
 				<li><a href="announcements.html">Announcements</a></li>
 				<li><a href="../common/profile.html">Profile</a></li>
 			</ul>
@@ -27,7 +27,7 @@
 		<div class="main-content manage-users">
 			<h2 class="page-title">Manage Users</h2>
 
-			<!-- Add User Form -->
+	
 			<form id="add-user-form" action="#" method="post" onsubmit="return validateAddUser(this)" novalidate>
 				<fieldset>
 					<legend>Add New User</legend>
@@ -50,8 +50,8 @@
 					<label for="department">Department:</label>
 					<select id="department" name="department" required>
 						<option value="">Select Department</option>
-						<option value="CSE">Computer Science & Engineering</option>
-						<option value="EEE">Electrical & Electronic Engineering</option>
+						<option value="CSE">Computer Science &amp; Engineering</option>
+						<option value="EEE">Electrical &amp; Electronic Engineering</option>
 						<option value="BBA">Business Administration</option>
 						<option value="English">English</option>
 					</select>
@@ -98,7 +98,7 @@
 							<th>Actions</th>
 						</tr>
 					</thead>
-					<tbody id="users-tbody">
+										<tbody id="users-tbody">
 						<tr id="user-row-1">
 							<td>Md. Rajin Shahriar</td>
 							<td>24-57561-2<br /><small>rajin@student.aiub.edu</small></td>
@@ -139,36 +139,27 @@
 								<button type="button" class="btn-warning" onclick="toggleUserStatus(this)">Deactivate</button>
 							</td>
 						</tr>
-						
-								<button type="button" class="btn-warning" onclick="toggleUserStatus(this)">Deactivate</button>
-							</td>
-						</tr>
 						<tr id="user-row-3">
 							<td>Md. Abidur Rahman</td>
 							<td>22-48662-3<br /><small>abidur@aiub.edu</small></td>
 							<td>CSE</td>
-							<td class="user-role-cell">Lab Supervisor</td>
+							<td class="user-role-cell">Administrator</td>
 							<td><span class="status active-status">Active</span></td>
 							<td>
 								<form action="#" method="post" onsubmit="return validateChangeRole(this, 3)" novalidate>
 									<select name="new_role" id="new-role-3" required>
 										<option value="">Change Role</option>
 										<option value="student">Student</option>
-										<option value="technician" selected>Technician</option>
+										<option value="technician">Technician</option>
 										<option value="incharge">In-Charge</option>
-										<option value="admin">Admin</option>
+										<option value="admin" selected>Admin</option>
 									</select>
 									<button type="submit">Update</button>
 								</form>
 								<button type="button" class="btn-warning" onclick="toggleUserStatus(this)">Deactivate</button>
 							</td>
 						</tr>
-						
-								<button type="button" class="btn-warning" onclick="toggleUserStatus(this)">Deactivate</button>
-							</td>
-						</tr>
-					</tbody>
-					<tr id="user-row-4">
+						<tr id="user-row-4">
 							<td>Shah Md. Akil Akhtab</td>
 							<td>19-32104-2<br /><small>akhtab@aiub.edu</small></td>
 							<td>EEE</td>
@@ -184,8 +175,11 @@
 										<option value="admin">Admin</option>
 									</select>
 									<button type="submit">Update</button>
-									
 								</form>
+								<button type="button" class="btn-warning" onclick="toggleUserStatus(this)">Deactivate</button>
+							</td>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 

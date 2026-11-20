@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Laboratory Reports | CampusLab</title>
+	<link rel="stylesheet" href="incharge-style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="sidebar">
+			<h1>CampusLab</h1>
+			<p>Lab In-Charge</p>
+			<ul>
+				<li><a href="dashboard.html">Dashboard</a></li>
+				<li><a href="lab-schedule.html">Lab Schedule</a></li>
+				<li><a href="technician-workload.html">Technician Workload</a></li>
+				<li><a class="active" href="reports.html">Reports</a></li>
+			</ul>
+		</div>
+		<div class="main-content">
+			<h2>Laboratory Utilisation Reports</h2>
+
+			<form action="#" method="get">
+				<fieldset>
+					<legend>Generate Report</legend>
+					<label>Report Type:</label>
+					<br />
+					<input type="radio" id="lab-wise" name="report_type" value="lab_wise" required /> Lab-wise Utilisation
+					<br />
+					<input type="radio" id="equipment-wise" name="report_type" value="equipment_wise" /> Equipment-wise Utilisation
+					<br />
+					<label for="department">Department:</label>
+					<select id="department" name="department">
+						<option value="">All departments</option>
+						<option value="computer_science">Computer Science</option>
+						<option value="eee">Electrical and Electronic Engineering</option>
+					</select>
+					<br />
+					<label for="lab-id">Laboratory:</label>
+					<select id="lab-id" name="lab_id">
+						<option value="">All laboratories</option>
+							<option value="1">IEC Lab</option>
+							<option value="2">Electronic Device Lab</option>
+							<option value="3">Digital Logic and Circuits Lab</option>
+							<option value="4">Microprocessor Lab</option>
+					</select>
+					<br />
+					<label for="from-date">From Date:</label>
+					<input type="date" id="from-date" name="from_date" required />
+					<br />
+					<label for="to-date">To Date:</label>
+					<input type="date" id="to-date" name="to_date" required />
+					<br />
+					<button type="submit">Generate Report</button>
+					<input type="reset" />
+				</fieldset>
+			</form>
+			<br />
+
+			<div class="table-wrap">
+				<table>
+					<caption>Utilisation summary by laboratory</caption>
+					<tr>
+						<th>Lab ID</th>
+						<th>Laboratory</th>
+						<th>Total Available Hours</th>
+						<th>Booked Hours</th>
+						<th>Utilisation</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>IEC Lab</td>
+						<td>200</td>
+						<td>150</td>
+						<td>75%</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Electronic Device Lab</td>
+						<td>180</td>
+						<td>126</td>
+						<td>70%</td>
+					</tr>
+				</table>
+			</div>
+			<br />
+
+			<div class="table-wrap">
+				<table>
+					<caption>Utilisation summary by equipment</caption>
+					<tr>
+						<th>Equipment ID</th>
+						<th>Equipment</th>
+						<th>Laboratory</th>
+						<th>Total Bookings</th>
+						<th>Utilisation</th>
+					</tr>
+					<tr>
+						<td>12</td>
+						<td>Oscilloscope</td>
+						<td>Electronic Device Lab</td>
+						<td>42</td>
+						<td>82%</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>Digital Multimeter</td>
+						<td>IEC Lab</td>
+						<td>28</td>
+						<td>64%</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

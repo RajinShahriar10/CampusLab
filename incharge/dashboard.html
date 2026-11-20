@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Lab In-Charge Dashboard | CampusLab</title>
+	<link rel="stylesheet" href="incharge-style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="sidebar">
+			<h1>CampusLab</h1>
+			<p>Lab In-Charge</p>
+			<ul>
+				<li><a class="active" href="dashboard.html">Dashboard</a></li>
+				<li><a href="lab-schedule.html">Lab Schedule</a></li>
+				<li><a href="technician-workload.html">Technician Workload</a></li>
+				<li><a href="reports.html">Reports</a></li>
+			</ul>
+		</div>
+		<div class="main-content">
+			<h2>Lab In-Charge Dashboard</h2>
+
+			<h3>Laboratory Summary</h3>
+			<div class="summary-row">
+				<div class="summary-box"><h3>Active Laboratories</h3><p>4</p></div>
+				<div class="summary-box"><h3>Pending Requests</h3><p>14</p></div>
+				<div class="summary-box"><h3>Technicians on Duty</h3><p>5</p></div>
+				<div class="summary-box"><h3>Overall Utilisation</h3><p>76%</p></div>
+			</div>
+			<br />
+
+			<h3>Today's Laboratory Schedule</h3>
+			<form action="#" method="get">
+				<fieldset>
+					<legend>Schedule Filter</legend>
+					<label for="schedule-date">Schedule Date:</label>
+					<input type="date" id="schedule-date" name="schedule_date" />
+					<br />
+					<label for="lab-id">Laboratory:</label>
+					<select id="lab-id" name="lab_id">
+						<option value="">All laboratories</option>
+							<option value="1">IEC Lab</option>
+							<option value="2">Electronic Device Lab</option>
+							<option value="3">Digital Logic and Circuits Lab</option>
+							<option value="4">Microprocessor Lab</option>
+					</select>
+					<br />
+					<button type="submit">View Schedule</button>
+					<input type="reset" />
+				</fieldset>
+			</form>
+			<br />
+			<div class="table-wrap">
+				<table>
+					<caption>Laboratory schedule for the selected date</caption>
+					<tr>
+						<th>Time</th>
+						<th>Laboratory</th>
+						<th>Equipment / Activity</th>
+						<th>Technician</th>
+						<th>Status</th>
+					</tr>
+					<tr>
+						<td>09:00-10:00</td>
+						<td>IEC Lab</td>
+						<td>Digital Multimeter - Circuit Practice</td>
+						<td>Technician 101</td>
+						<td><span class="status approved">Approved</span></td>
+					</tr>
+					<tr>
+						<td>10:00-12:20</td>
+						<td>Electronic Device Lab</td>
+						<td>Oscilloscope - Signal Measurement</td>
+						<td>Technician 102</td>
+						<td><span class="status pending">Pending</span></td>
+					</tr>
+				</table>
+			</div>
+			<br />
+
+			<div class="table-wrap">
+				<table>
+					<caption>Current workload overview</caption>
+					<tr>
+						<th>Technician</th>
+						<th>Pending Requests</th>
+						<th>Approved Reservations</th>
+						<th>Completed Sessions</th>
+					</tr>
+					<tr>
+						<td>Technician 101</td>
+						<td>5</td>
+						<td>8</td>
+						<td>24</td>
+					</tr>
+					<tr>
+						<td>Technician 102</td>
+						<td>3</td>
+						<td>6</td>
+						<td>19</td>
+					</tr>
+				</table>
+			</div>
+			<p><a href="technician-workload.html">View full workload</a></p>
+			<br />
+
+			<div class="table-wrap">
+				<table>
+					<caption>Utilisation summary by department</caption>
+					<tr>
+						<th>Department</th>
+						<th>Booked Hours</th>
+						<th>Utilisation</th>
+					</tr>
+					<tr>
+						<td>Electrical and Electronic Engineering</td>
+						<td>210</td>
+						<td>78%</td>
+					</tr>
+					<tr>
+						<td>Computer Science</td>
+						<td>96</td>
+						<td>68%</td>
+					</tr>
+				</table>
+			</div>
+			<p><a href="reports.html">View detailed reports</a></p>
+		</div>
+	</div>
+</body>
+</html>

@@ -409,3 +409,321 @@ td input[type="text"], td input[type="date"], td input[type="time"], td select {
 	box-sizing: border-box;
 	width: 31%;
 }
+
+/*Name: Nasrin Jahan Basma->Lab Technician*/
+
+/*Dashboard*/
+.technician-dashboard .page-title {
+    margin-bottom: 20px;
+}
+.technician-dashboard .card {
+    margin-bottom: 20px;
+}
+.technician-dashboard .card h3 {
+    margin-top: 10px;
+}
+.technician-dashboard .card p {
+    line-height: 1.5;
+}
+.technician-dashboard .card a {
+    font-weight: bold;
+    text-decoration: none;
+}
+.technician-dashboard .card a:hover {
+    text-decoration: underline;
+}
+/*Approval Queue*/
+.approval-queue .page-title {
+    margin-bottom: 20px;
+}
+.approval-queue section {
+    margin-bottom: 20px;
+}
+.approval-queue table {
+    width: 100%;
+}
+.approval-queue th {
+    text-align: left;
+}
+.approval-queue button {
+    margin-bottom: 5px;
+}
+/*Check-in and Check-out*/
+.check-in-out .page-title {
+    margin-bottom: 20px;
+}
+.check-in-out .card {
+    margin-bottom: 20px;
+}
+.check-in-out fieldset {
+    margin-bottom: 20px;
+}
+.check-in-out legend {
+    font-weight: bold;
+}
+.check-in-out textarea {
+    min-height: 80px;
+}
+.check-in-out button {
+    margin: 5px;
+}
+.check-in-out table {
+    width: 100%;
+}
+/*Maintenance Log*/
+.maintenance-log .page-title {
+    margin-bottom: 20px;
+}
+.maintenance-log .card {
+    margin-bottom: 20px;
+}
+.maintenance-log fieldset {
+    margin-bottom: 20px;
+}
+.maintenance-log legend {
+    font-weight: bold;
+}
+.maintenance-log textarea {
+    min-height: 80px;
+}
+.maintenance-log table {
+    width: 100%;
+}
+.maintenance-log button {
+    margin-top: 10px;
+}
+/*Technician Schedule*/
+.technician-schedule .page-title {
+    margin-bottom: 20px;
+}
+.technician-schedule .card {
+    margin-bottom: 20px;
+}
+.technician-schedule fieldset {
+    margin-bottom: 20px;
+}
+.technician-schedule legend {
+    font-weight: bold;
+}
+.technician-schedule table {
+    width: 100%;
+}
+.technician-schedule button {
+    margin-top: 10px;
+}
+/*Profile Edit*/
+.profile-edit .page-title {
+    margin-bottom: 20px;
+}
+.profile-edit .card {
+    margin-bottom: 20px;
+}
+.profile-edit fieldset {
+    margin-bottom: 20px;
+}
+.profile-edit legend {
+    font-weight: bold;
+}
+.profile-edit button {
+    margin-top: 10px;
+}
+/* Profile Page */
+.profile-page .page-title {
+    margin-bottom: 20px;
+}
+.profile-page .card {
+    margin-bottom: 20px;
+}
+.profile-page img {
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+.profile-page dt {
+    font-weight: bold;
+    margin-top: 10px;
+}
+.profile-page dd {
+    margin-bottom: 10px;
+}
+.profile-page button {
+    margin-top: 10px;
+}
+
+/*Name: Md. Abidur Rahman -> Administrator*/
+
+/*Admin Dashboard*/
+.admin-dashboard .page-title {
+    margin-bottom: 20px;
+}
+.admin-dashboard .summary-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.admin-dashboard .summary-box {
+    flex: 1;
+    padding: 16px 18px;
+    background-color: white;
+    border: 1px solid #cfdde3;
+    border-top: 4px solid #1f7a8c;
+    border-radius: 4px;
+}
+.admin-dashboard .summary-box h3 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+}
+.admin-dashboard .summary-box p {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1f7a8c;
+}
+.admin-dashboard .card {
+    margin-bottom: 20px;
+}
+.admin-dashboard table {
+    width: 100%;
+}
+
+/*Manage Users*/
+.manage-users .page-title {
+    margin-bottom: 20px;
+}
+.manage-users fieldset {
+    margin-bottom: 20px;
+}
+.manage-users legend {
+    font-weight: bold;
+}
+.manage-users #search {
+    width: 320px;
+    max-width: 100%;
+    margin-bottom: 15px;
+    padding: 8px 10px;
+}
+.manage-users table {
+    width: 100%;
+}
+.manage-users th {
+    text-align: left;
+}
+.manage-users td select {
+    width: auto;
+    padding: 4px 8px;
+    font-size: 12px;
+}
+.manage-users button {
+    margin: 2px 4px 2px 0;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/*Manage Labs*/
+.manage-labs .page-title {
+    margin-bottom: 20px;
+}
+.manage-labs fieldset {
+    margin-bottom: 20px;
+}
+.manage-labs legend {
+    font-weight: bold;
+}
+.manage-labs table {
+    width: 100%;
+}
+.manage-labs th {
+    text-align: left;
+}
+.manage-labs button {
+    margin: 2px 4px 2px 0;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/*Manage Equipment*/
+.manage-equipment .page-title {
+    margin-bottom: 20px;
+}
+.manage-equipment fieldset {
+    margin-bottom: 20px;
+}
+.manage-equipment legend {
+    font-weight: bold;
+}
+.manage-equipment #filter-lab {
+    width: 220px;
+    margin-bottom: 15px;
+}
+.manage-equipment table {
+    width: 100%;
+}
+.manage-equipment th {
+    text-align: left;
+}
+.manage-equipment button {
+    margin: 2px 4px 2px 0;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/*Reports & Audit Log*/
+.reports-audit .page-title {
+    margin-bottom: 20px;
+}
+.reports-audit fieldset {
+    margin-bottom: 20px;
+}
+.reports-audit legend {
+    font-weight: bold;
+}
+.reports-audit table {
+    width: 100%;
+}
+.reports-audit th {
+    text-align: left;
+}
+.reports-audit button, .reports-audit input[type="submit"] {
+    margin-top: 10px;
+}
+
+/*Announcements*/
+.announcements .page-title {
+    margin-bottom: 20px;
+}
+.announcements fieldset {
+    margin-bottom: 20px;
+}
+.announcements legend {
+    font-weight: bold;
+}
+.announcements textarea {
+    min-height: 80px;
+}
+.announcements table {
+    width: 100%;
+}
+.announcements th {
+    text-align: left;
+}
+.announcements button {
+    margin: 2px 4px 2px 0;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/*Change Password*/
+.change-password .page-title {
+    margin-bottom: 20px;
+}
+.change-password fieldset {
+    margin-bottom: 20px;
+}
+.change-password legend {
+    font-weight: bold;
+}
+.change-password input[type="password"] {
+    margin-bottom: 8px;
+}
+.change-password button, .change-password input[type="submit"] {
+    margin-top: 10px;
+}
